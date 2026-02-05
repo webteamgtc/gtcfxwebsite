@@ -73,7 +73,7 @@ export default function HeroSectionSlider() {
             position: relative;
           }
         }
-        
+
         /* Desktop styles - image on top, gradient behind for side blend */
         @media (min-width: 768px) {
           .hero-slider-bg-desktop {
@@ -94,7 +94,7 @@ export default function HeroSectionSlider() {
             position: relative;
           }
         }
-        
+
         .swiper-pagination-bullet {
           width: 12px;
           height: 12px;
@@ -103,7 +103,7 @@ export default function HeroSectionSlider() {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .swiper-pagination-bullet-active {
           background: linear-gradient(135deg, #956E42, #E9DDCF);
           width: 40px;
@@ -111,7 +111,7 @@ export default function HeroSectionSlider() {
           box-shadow: 0 0 20px rgba(149, 110, 66, 0.8), 0 0 40px rgba(149, 110, 66, 0.4);
           border-color: rgba(233, 221, 207, 0.5);
         }
-        
+
         .swiper-pagination {
           bottom: 40px !important;
           display: flex !important;
@@ -166,7 +166,7 @@ export default function HeroSectionSlider() {
         .animate-fade-in-delay-3 {
           animation: fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1) 0.7s both;
         }
-        
+
         .hero-gradient-text {
           background: linear-gradient(135deg, #995F22 0%, #E9DDCF 50%, #995F22 100%);
           background-size: 200% 200%;
@@ -175,7 +175,7 @@ export default function HeroSectionSlider() {
           -webkit-text-fill-color: transparent;
           animation: gradient-shift 3s ease infinite;
         }
-        
+
         @keyframes gradient-shift {
           0%, 100% {
             background-position: 0% 50%;
