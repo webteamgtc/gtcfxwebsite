@@ -9,7 +9,9 @@ import { RiStockLine, RiGlobalLine } from "react-icons/ri";
 import { IoMdLaptop } from "react-icons/io";
 import { BsBarChart } from "react-icons/bs";
 import { IoHomeOutline } from "react-icons/io5";
-import { MdOutlineWbSunny, MdOutlineManageAccounts } from "react-icons/md";
+import { MdOutlineWbSunny, MdOutlineManageAccounts, MdOutlineDownload } from "react-icons/md";
+import { TbDownload } from "react-icons/tb";
+
 import { FiBriefcase, FiGitPullRequest } from "react-icons/fi";
 import { BiAnalyse, BiSpeaker } from "react-icons/bi";
 import TopBar from "./Topbar";
@@ -40,8 +42,8 @@ const NavItem = ({ title, href, locale, links, id, show, setShow }) => {
                 className={`
                     block cursor-pointer py-5 px-3 lg:px-4 rounded-lg text-sm font-medium transition-all duration-200
                     ${isAr ? "pr-3 lg:pr-4 pl-3 lg:pl-4" : "pl-3 lg:pl-4 pr-3 lg:pr-4"}
-                    ${isActive ? "text-[#E9DDCF]" : "text-white/95 hover:text-[#E9DDCF] hover:bg-white/10"}
-                    ${isOpen ? "text-[#E9DDCF] bg-white/10" : ""}
+                    ${isActive ? "text-[#E9DDCF]" : "text-black/95 hover:text-black/95 hover:bg-white/10"}
+                    ${isOpen ? "text-black/95 bg-white/10" : ""}
                 `}
                 aria-expanded={isOpen}
                 aria-haspopup="true"
@@ -171,7 +173,9 @@ const Header = ({ currentLanguage }) => {
     const pathname = usePathname();
     const params = useParams();
     const [show, setShow] = useState("");
+    const [qrPopoverOpen, setQrPopoverOpen] = useState(false);
     const headerRef = useRef(null);
+    const qrPopoverRef = useRef(null);
 
     // Close megamenu when clicking outside
     useEffect(() => {
@@ -191,12 +195,30 @@ const Header = ({ currentLanguage }) => {
         }
     }, [show]);
 
-    // Close megamenu on Escape
+    // Close megamenu and QR popover on Escape
     useEffect(() => {
-        const handleEscape = (e) => { if (e.key === "Escape") setShow(""); };
+        const handleEscape = (e) => {
+            if (e.key === "Escape") {
+                setShow("");
+                setQrPopoverOpen(false);
+            }
+        };
         document.addEventListener("keydown", handleEscape);
         return () => document.removeEventListener("keydown", handleEscape);
     }, []);
+
+    // Close QR popover when clicking outside (anywhere)
+    useEffect(() => {
+        if (!qrPopoverOpen) return;
+        const handleClickOutside = (e) => {
+            if (qrPopoverRef.current && !qrPopoverRef.current.contains(e.target)) {
+                setQrPopoverOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, [qrPopoverOpen]);
+
     const pathnameWithoutLocale = pathname.replace(`/${locale}`, "");
     const [href, setHref] = useState([
         {
@@ -575,11 +597,11 @@ const Header = ({ currentLanguage }) => {
     return (
         <div ref={headerRef} className="absolute top-0 left-0 right-0 z-[40]">
             <TopBar currentLanguage={currentLanguage} />
-            <div className="header bg-black/20 backdrop-blur-md border-b border-white/15 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+            <div className="header bg-white backdrop-blur-md border-b border-white/15 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
                 <nav className="container mx-auto py-3 lg:py-2">
                     <div className="flex justify-between items-center gap-4">
                         <Image
-                            src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/footer-logo.webp"
+                            src="https://gtcfx-bucket.s3.ap-southeast-1.amazonaws.com/img/logo.webp"
                             width={200}
                             height={72}
                             alt="GTCFX"
@@ -601,6 +623,39 @@ const Header = ({ currentLanguage }) => {
                                     />
                                 ))}
                             </ul>
+                            <div className="relative flex items-center" ref={qrPopoverRef}>
+                                <button
+                                    type="button"
+                                    onClick={() => setQrPopoverOpen((o) => !o)}
+                                    className="p-2 rounded-lg cursor-pointer text-black/90 hover:text-black hover:bg-black/10 transition-colors"
+                                    aria-label="Show QR code"
+                                >
+                                    <TbDownload size={18} />
+                                </button>
+                                {qrPopoverOpen && (
+                                    <>
+                                        <div
+                                            className="fixed inset-0 z-[52]"
+                                            aria-hidden
+                                            onClick={() => setQrPopoverOpen(false)}
+                                        />
+                                        <div
+                                            className="absolute min-w-[180px] top-full right-0 mt-2 z-[53] rounded-lg bg-white shadow-xl border border-gray-200 p-3"
+                                            role="dialog"
+                                            aria-label="QR code"
+                                        >
+                                            <p className="text-xs font-medium text-gray-700 mb-2 text-center">Scan to download</p>
+                                            <Image
+                                                src="/app/qrcode.webp"
+                                                alt="GTCFX Mobile App QR Code"
+                                                width={140}
+                                                height={140}
+                                                className="rounded"
+                                            />
+                                        </div>
+                                    </>
+                                )}
+                            </div>
                             <div
                                 className={`flex items-center gap-2 ${isAr ? "md:mr-4" : "md:ml-4"
                                     }`}

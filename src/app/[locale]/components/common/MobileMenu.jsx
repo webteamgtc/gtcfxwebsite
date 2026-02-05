@@ -171,7 +171,7 @@ export default function MobileMenu(props) {
     <>
       <button
         type="button"
-        className="inline-flex items-center justify-center rounded-lg p-2.5 bg-white/10 hover:bg-white/20 text-white border border-white/20 transition-colors"
+        className="inline-flex items-center justify-center rounded-lg p-2.5 bg-white/10 hover:bg-white/20 text-black border border-white/20 transition-colors"
         onClick={() => setOpen(true)}
         aria-label="Open menu"
       >

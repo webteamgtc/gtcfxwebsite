@@ -1,48 +1,4 @@
-// "use client";
-
-// import { useState, useEffect, useRef } from "react";
-// import Image from "next/image";
-
-// const page = () => {
-
-//   return (
-//     <>
-//       <div
-//         className="w-full relative min-h-screen overflow-hidden"
-//         style={{
-//           backgroundImage: "url('/bg.png')",
-//           backgroundSize: "cover",
-//           backgroundPosition: "center",
-//           backgroundRepeat: "no-repeat",
-//           backgroundAttachment: "fixed"
-//         }}
-//       >
-//         {/* Full background image - always visible */}
-//         <div
-//           className="absolute inset-0 z-0"
-//           style={{
-//             backgroundImage: "url('/bg.png')",
-//             backgroundSize: "cover",
-//             backgroundPosition: "center",
-//             backgroundRepeat: "no-repeat"
-//           }}
-//         />
-
-// reqwrwerwrrew
- 
-//         </div>
- 
-//     </>
-//   );
-// };
-
-// export default page;
-
-
-
-"use client";
-
-import React, { useEffect } from "react";
+import React from "react";
 import HeroSectionSlider from "./components/home/HeroSectionSlider";
 
 // Import directly - no lazy loading to fix mobile issue
@@ -56,6 +12,12 @@ import OurMarketsSection from "./components/home/OurMarketsSection";
 import ReviewsSection from "./components/home/ReviewSection";
 import StatsBar from "./components/home/CounterComponent";
 import MiniTickersRow from "./components/home/CurrencyBanner";
+
+
+export const metadata = {
+  title: 'GTCFX - Trade CFDs with Low Spreads & Lightning Execution',
+  description: 'Trade with confidence using GTCFX’s deep liquidity pools, lightning-fast execution, and competitive spreads. Open your account and enjoy seamless access to global CFD markets backed by trusted support.',
+};
 
 const NewPageOne = () => {
   return (

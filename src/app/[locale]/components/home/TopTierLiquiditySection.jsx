@@ -182,10 +182,10 @@ export default function TopTierLiquidityAccess() {
                     key={t.key}
                     onClick={() => setActiveTab(t.key)}
                     className={[
-                      "relative z-10 flex-1 rounded-full px-3 h-full md:px-4 py-2 md:py-2.5 text-[14px] md:text-[15px] font-semibold transition-all duration-300 ease-out",
+                      "relative z-10 cursor-pointer  flex-1 rounded-full px-3 h-full md:px-4 py-2 md:py-2.5 text-[14px] md:text-[15px] font-semibold transition-all duration-300 ease-out",
                       active
                         ? "text-[#293B93] bg-white"
-                        : "text-[#293B9333]",
+                        : "text-[#293B9333] hover:bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] hover:text-white",
                     ].join(" ")}
                     style={
                       active
@@ -288,7 +288,7 @@ export default function TopTierLiquidityAccess() {
             </div>
 
             <div className="mt-4 md:mt-10 flex justify-center">
-              <button className="rounded-full py-3 md:py-4 bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] px-8 md:px-10 min-w-[280px] md:min-w-[300px] text-[15px] md:text-[16px] font-semibold text-white shadow-[0_10px_30px_rgba(149,110,66,0.4)] hover:shadow-[0_15px_40px_rgba(149,110,66,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 hover:from-[#A67A52] hover:to-[#F0E4D6]">
+              <button className="rounded-full cursor-pointer py-3 md:py-4 bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] px-8 md:px-10 min-w-[280px] md:min-w-[300px] text-[15px] md:text-[16px] font-semibold text-white shadow-[0_10px_30px_rgba(149,110,66,0.4)] hover:shadow-[0_15px_40px_rgba(149,110,66,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 hover:from-[#A67A52] hover:to-[#B68756]">
                 {t("butttonLp")}
               </button>
             </div>

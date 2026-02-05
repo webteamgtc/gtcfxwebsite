@@ -192,7 +192,7 @@ export default function HeroSectionSlider() {
         {/* Gray overlay for mobile - improves text readability */}
                <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
         <div
-          className="absolute right-0 top-[18%] bottom-0 md:w-[46%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
+          className="absolute right-0 top-[18%] bottom-0 md:w-[46%] 2xl:w-[30%] 3xl:w-[26%] 4xl:w-[24%] 5xl:w-[20%] 6xl:w-[18%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
           style={{ backgroundPosition: "left" }}
         />
         {/* Mobile-only overlay over image for text readability */}
@@ -216,7 +216,7 @@ export default function HeroSectionSlider() {
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px] py-8 md:py-12 lg:py-16">
+                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[600px] md:min-h-[600px] lg:min-h-[700px] py-12 md:py-12 lg:py-16">
                     {/* Content */}
                     <div className="max-w-2xl px-4 md:px-6">
                       {/* {slide.type === "slider2" ? (
