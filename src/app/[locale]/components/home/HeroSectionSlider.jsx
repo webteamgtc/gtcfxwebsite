@@ -6,7 +6,6 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import { useTranslations } from "next-intl";
-import RatingsBar from "./RatingsBar";
 
 export default function HeroSectionSlider() {
   const t = useTranslations("home.hero");
@@ -66,8 +65,9 @@ export default function HeroSectionSlider() {
         /* Mobile styles - image on top, gradient behind for side blend */
         @media (max-width: 767px) {
           .hero-bg-desktop {
-            background-image: url('/new/banner-new-1.png'), linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
-            background-size: contain, cover;
+            background-image: url('/new/banner-bg.png');
+             linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
+            background-size: cover;
             background-position: center center, center;
             background-repeat: no-repeat, no-repeat;
             position: relative;
@@ -77,15 +77,17 @@ export default function HeroSectionSlider() {
         /* Desktop styles - image on top, gradient behind for side blend */
         @media (min-width: 768px) {
           .hero-slider-bg-desktop {
-            background-image: url('/new/banner-new-1.png'), linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
-            background-size: contain, cover;
+            background-image: url('/new/banner-bg.png');
+             linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
+            background-size: cover;
             background-position: center center, center;
             background-repeat: no-repeat, no-repeat;
             min-height: 900px;
           }
           .hero-bg-desktop {
-            background-image: url('/new/banner-new-1.png'), linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
-            background-size: contain, cover;
+            background-image: url('/new/banner-bg.png');
+             linear-gradient(135deg, #0a0c14 0%, #0d122d 50%, #0a0e27 100%);
+            background-size: cover;
             background-position: center center, center;
             background-repeat: no-repeat, no-repeat;
             min-height: 900px;
@@ -188,8 +190,13 @@ export default function HeroSectionSlider() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#956E42]/5 via-transparent to-[#E9DDCF]/5 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(149,110,66,0.1),transparent_50%)] pointer-events-none z-0" />
         {/* Gray overlay for mobile - improves text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
-
+               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
+        <div
+          className="absolute right-0 top-[18%] bottom-0 md:w-[46%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
+          style={{ backgroundPosition: "left" }}
+        />
+        {/* Mobile-only overlay over image for text readability */}
+        <div className="absolute inset-0 md:hidden bg-gradient-to-r from-black/70 via-black/50 to-transparent pointer-events-none z-[1]" />
         <div className="container mx-auto py-8 md:py-12 lg:py-16 relative z-10">
           <div className="relative overflow-hidden rounded-tr-[44px] bg-[#070A2A]/0">
             <Swiper

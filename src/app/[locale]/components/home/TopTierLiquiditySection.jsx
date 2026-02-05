@@ -152,34 +152,28 @@ export default function TopTierLiquidityAccess() {
 
   return (
     <section
-      className="w-full "
-      style={{
-        background:
-          "linear-gradient(45deg, rgba(0, 0, 0, 0.00) 52.67%, rgba(0, 33, 255, 0.20) 73.42%), linear-gradient(0deg, #293794 0%, #000021 103.34%)",
-      }}
+      className="w-full bg-white "
     >
       {/* top gradient area */}
       <div className="relative overflow-hidden">
         {/* gradient backdrop (matches image vibe) */}
 
-        <div className="relative mx-auto container px-4 md:px-6 md:py-16 py-16" data-aos="fade-up" data-aos-duration="1000">
+        <div className="relative mx-auto container px-4 md:px-6 md:py-16 py-10" data-aos="fade-up" data-aos-duration="1000">
           {/* Heading */}
-          <div className="text-center mb-8 md:mb-12">
-            <h2 className="HeadingH2 text-secondary">
+          <div className="text-center mb-8 md:mb-12 max-w-xl mx-auto">
+            <h2 className="HeadingH2 text-[#333]">
               {t("heading")}
             </h2>
-            <p className="text font-normal text-white/90 max-w-5xl mx-auto leading-relaxed">
-              {t("desc")}
+            <p className="text font-normal text-[#666] max-w-5xl mx-auto leading-relaxed">
+              Transparent service, private trades, and fast execution.
+              {/* {t("desc")} */}
             </p>
           </div>
 
           {/* Segmented tabs */}
-          <div className="mt-8 md:mt-12 flex justify-center">
+          <div className="mt-8 md:mt-12 flex justify-center overflow-visible">
             <div
-              className="relative flex md:h-[56px] h-[44px] w-[300px] md:w-[600px] items-center rounded-full bg-white/10 backdrop-blur-md p-[4px] border border-white/20"
-              style={{
-                boxShadow: "0 8px 32px rgba(0, 0, 0, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.1)",
-              }}
+              className="relative flex md:h-[56px] h-[44px] w-[300px] md:w-[600px] items-center rounded-full bg-[#F1F2F4] backdrop-blur-md border border-white/20 overflow-visible"
             >
               {tabs.map((t) => {
                 const active = t.key === activeTab;
@@ -188,20 +182,35 @@ export default function TopTierLiquidityAccess() {
                     key={t.key}
                     onClick={() => setActiveTab(t.key)}
                     className={[
-                      "relative z-10 flex-1 rounded-full px-3 md:px-4 py-2 md:py-2.5 text-[14px] md:text-[15px] font-semibold transition-all duration-300 ease-out",
-                      active 
-                        ? "text-white  bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] shadow-lg" 
-                        : "text-white/70 hover:text-white/90",
+                      "relative z-10 flex-1 rounded-full px-3 h-full md:px-4 py-2 md:py-2.5 text-[14px] md:text-[15px] font-semibold transition-all duration-300 ease-out",
+                      active
+                        ? "text-[#293B93] bg-white"
+                        : "text-[#293B9333]",
                     ].join(" ")}
                     style={
                       active
                         ? {
-                            boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)",
-                          }
+                          boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05)",
+                        }
                         : {}
                     }
                   >
                     {t.label}
+                    {/* Speech-bubble arrow under active tab */}
+                    {active && (
+                      <span
+                        className="absolute left-1/2 bottom-[-12px] -translate-x-1/2 pointer-events-none"
+                        style={{
+                          width: 0,
+                          height: 0,
+                          borderLeft: "10px solid transparent",
+                          borderRight: "10px solid transparent",
+                          borderTop: "12px solid white",
+                          filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.08))",
+                        }}
+                        aria-hidden
+                      />
+                    )}
                   </button>
                 );
               })}
@@ -213,6 +222,9 @@ export default function TopTierLiquidityAccess() {
             <style
               dangerouslySetInnerHTML={{
                 __html: `
+                .swiper{
+                  padding: 0 10px !important;
+                }
               .liquidity-pagination .swiper-pagination {
                 position: relative !important;
                 bottom: auto !important;
@@ -223,23 +235,25 @@ export default function TopTierLiquidityAccess() {
                 gap: 8px !important;
               }
               .liquidity-pagination .swiper-pagination-bullet {
-                height: 6px !important;
-                width: 10px !important;
+                height: 8px !important;
+                width: 12px !important;
                 border-radius: 9999px !important;
-                background: rgba(255, 255, 255, 0.3) !important;
+                background: #293B9333 !important;
                 opacity: 1 !important;
                 margin: 0 4px !important;
                 cursor: pointer !important;
                 transition: all 0.3s ease !important;
+                border: none !important;
               }
               .liquidity-pagination .swiper-pagination-bullet:hover {
-                background: rgba(255, 255, 255, 0.5) !important;
+                background: #293B9333 !important;
               }
               .liquidity-pagination .swiper-pagination-bullet-active {
-                background: linear-gradient(to right, #956E42, #E9DDCF) !important;
+                background: #293B93 !important;
                 width: 28px !important;
                 opacity: 1 !important;
-                box-shadow: 0 0 10px rgba(149, 110, 66, 0.4) !important;
+                box-shadow: 0 0 10px #293B9333 !important;
+                border: none !important;
               }
             `,
               }}
@@ -266,14 +280,14 @@ export default function TopTierLiquidityAccess() {
 
           {/* bottom callout */}
           <div className="mt-5 text-center">
-            <div className="text-[22px] md:text-[24px] font-extrabold tracking-[0.5px] text-white mb-2">
+            <div className="text-[18px] md:text-[24px] font-extrabold tracking-[0.5px] text-[#333] mb-2">
               {t("lpLabel")}
             </div>
-            <div className="text-[15px] md:text-[16px] font-normal tracking-[0.3px] text-white/90">
+            <div className="text-[14px] md:text-[16px] font-normal tracking-[0.3px] text-[#666]">
               {t("lpLabel1")}
             </div>
 
-            <div className="mt-8 md:mt-10 flex justify-center">
+            <div className="mt-4 md:mt-10 flex justify-center">
               <button className="rounded-full py-3 md:py-4 bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] px-8 md:px-10 min-w-[280px] md:min-w-[300px] text-[15px] md:text-[16px] font-semibold text-white shadow-[0_10px_30px_rgba(149,110,66,0.4)] hover:shadow-[0_15px_40px_rgba(149,110,66,0.5)] transition-all duration-300 hover:scale-105 active:scale-95 hover:from-[#A67A52] hover:to-[#F0E4D6]">
                 {t("butttonLp")}
               </button>
@@ -285,16 +299,23 @@ export default function TopTierLiquidityAccess() {
   );
 }
 
-function CardItem({ pill, title, subtitle, bullets,icon }) {
+function CardItem({ pill, title, subtitle, bullets, icon }) {
   return (
     <div
-      className="group rounded-[22px] bg-white p-6 md:p-8 w-full h-full text-left transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 cursor-pointer"
+      className="group rounded-[22px] bg-white p-6 m-1 md:p-8 w-full h-full text-left transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 cursor-pointer"
       style={{
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
       }}
     >
       {/* top mini pill */}
-      <div className="inline-flex items-center gap-2 rounded-full  bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] px-3 py-1.5 text-[12px] font-semibold text-white mb-4 transition-transform duration-300 group-hover:scale-105">
+      <div className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-[12px] font-semibold text-white mb-4 transition-transform duration-300 group-hover:scale-105"
+        style={{
+          borderRadius: "32px",
+          border: "1px solid rgba(255, 255, 255, 0.00)",
+          background: "#293B93",
+          backdropFilter: "blur(22.5px)",
+        }}
+      >
         <span className="inline-flex h-[20px] w-[20px] items-center justify-center flex-shrink-0">
           <DotIcon icon={icon} />
         </span>
@@ -318,31 +339,22 @@ function CardItem({ pill, title, subtitle, bullets,icon }) {
         ))}
       </ul>
 
-      <div className="mt-6 md:mt-8 flex items-center justify-end group-hover:translate-x-1 transition-transform duration-300">
-        <div className="text-[#293B93] flex items-center justify-center">
-         <img src="/new/arrow-right.svg" alt="arrow" className="w-5 h-5 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
+      <div className="mt-6 md:mt-8 flex items-center group-hover:translate-x-1 transition-transform duration-300">
+        <div className="text-[#293B93] flex items-center justify-center"
+          style={{
+            borderRadius: "14px",
+            background: "#FFF",
+          }}
+        >
+          <img src="/new/arrow-right.svg" alt="arrow" className="w-8 h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </div>
   );
 }
 
-function DotIcon({icon}) {
-    return (
-    <img src={icon} alt="dot" className=" object-contain" />
-  );
-}
-
-function ArrowIcon() {
+function DotIcon({ icon }) {
   return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-      <path
-        d="M9 6l6 6-6 6"
-        stroke="currentColor"
-        strokeWidth="2.4"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
+    <img src={icon} alt="dot" className=" object-contain" />
   );
 }

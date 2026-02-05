@@ -20,7 +20,7 @@ export default function AttractiveSingleImageSwiper() {
   return (
     <>
     
-      <section className="w-full pb-12 md:pb-0">
+      <section className="w-full pb-6 md:pb-0">
       <div className="mx-auto flex md:justify-end justify-center ">
         <div className=" w-full max-w-[280px] md:max-w-[320px]">
           {/* Card wrapper with enhanced styling */}
@@ -42,7 +42,7 @@ export default function AttractiveSingleImageSwiper() {
                   
                   {/* Screen Area - positioned over the frame */}
                   <div className="absolute inset-0 flex items-center justify-center z-10">
-                    <div className="relative w-[92%] h-[98%] top-[1%] rounded-[2.5rem] overflow-hidden">
+                    <div className="relative w-[92%] h-[98%] top-[1%] rounded-[2.5rem] bg-white overflow-hidden">
                       <Swiper
                         modules={[Autoplay, Pagination]}
                         slidesPerView={1}

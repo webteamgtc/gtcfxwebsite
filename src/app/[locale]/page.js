@@ -53,21 +53,21 @@ import ChooseYourAccountSection from "./components/home/ChooseYourAccountSection
 import TradeOnTheGoSection from "./components/home/TradeOnTheGoSection";
 import IBProgramSection from "./components/home/IBProgramSection";
 import OurMarketsSection from "./components/home/OurMarketsSection";
+import ReviewsSection from "./components/home/ReviewSection";
+import StatsBar from "./components/home/CounterComponent";
+import MiniTickersRow from "./components/home/CurrencyBanner";
 
 const NewPageOne = () => {
   return (
     <>
-      {/* Hero section loads immediately */}
       <HeroSectionSlider />
-      
-      {/* Load sections immediately - no lazy loading to fix mobile issue */}
       <PremierPlatformSection />
-      <WhyWorkWithGTCSection />
+      <StatsBar/>
       <TopTierLiquiditySection />
-      <ChooseYourAccountSection />
       <TradeOnTheGoSection />
-      <IBProgramSection />
+      <MiniTickersRow/>
       <OurMarketsSection />
+      <ReviewsSection/>
     </>
   );
 };

@@ -6,6 +6,8 @@ import { ToastContainer } from "react-toastify";
 import "react-vertical-timeline-component/style.min.css";
 
 import Script from "next/script";
+import Footer from "./components/common/Footer";
+import Header from "./components/common/Header";
 
 export default async function LocaleLayout({ children, params }) {
   const { locale } = await params;
@@ -22,6 +24,7 @@ export default async function LocaleLayout({ children, params }) {
       }}
     >
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
@@ -45,7 +48,11 @@ export default async function LocaleLayout({ children, params }) {
       </head>
 
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
         <ToastContainer autoClose={3000} />
       </body>
     </html>

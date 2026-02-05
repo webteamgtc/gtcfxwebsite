@@ -136,16 +136,19 @@ const OurMarketsSection = () => {
   }
 
   return (
-     <section
-      className="w-full pt-10 md:pt-16 overflow-hidden bg-white"
-      
+    <section
+      className="w-full py-10 md:py-16 overflow-hidden bg-white"
+      style={{
+        background: " var(--Linear, linear-gradient(180deg, #27348D 0%, #05062E 100%))"
+      }}
+
     >
-      <div className="container" data-aos="fade-up" data-aos-duration="1000">
+      <div className="container mx-auto" data-aos="fade-up" data-aos-duration="1000">
         <div className="text-center mb-12">
-          <h2 className="HeadingH2">
+          <h2 className="HeadingH2 !text-white">
             Market Overview
           </h2>
-          <p className="font-normal max-w-3xl mx-auto leading-relaxed">
+          <p className="font-normal max-w-3xl mx-auto text-white leading-relaxed">
             Stay informed with the data that matters, on 3,000+ markets. Get the
             latest news, trader sentiment, spreads, price action and much more.
           </p>

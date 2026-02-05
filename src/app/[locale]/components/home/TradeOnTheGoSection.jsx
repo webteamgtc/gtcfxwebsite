@@ -5,7 +5,9 @@ import AttractiveSingleImageSwiper from "./MobileSlider";
 export default function TradeOnTheGoHero() {
   return (
     <>
-      <section className="w-full bg-[#F1F2F4] py-12 md:py-16">
+      <section className="w-full py-12 md:py-16"
+        style={{ background: "linear-gradient(288deg, #27348D 36.32%, #161D5E 69.76%, #05062E 103.2%)" }}
+      >
         <div
           className="mx-auto container px-4 md:px-6"
           data-aos="fade-up"
@@ -14,17 +16,17 @@ export default function TradeOnTheGoHero() {
           <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 md:gap-2 lg:gap-3">
             {/* LEFT */}
             <div className="col-span-1 md:col-span-6 lg:col-span-6 order-2 md:order-1">
-              <h1 className="text-[32px] md:text-[28px] lg:text-[40px] font-extrabold uppercase leading-[1.05] tracking-[0.3px] text-[#293B93] mb-4">
+              <h1 className="text-[32px] text-center md:text-left md:text-[28px] lg:text-[40px] font-extrabold uppercase leading-[1.05] tracking-[0.3px] text-white mb-4">
                 TRADE ON THE GO GTC GO APP
               </h1>
 
-              <h2 className="mt-4 md:mt-6 text-[24px] md:text-[32px] lg:text-[38px] font-semibold leading-[1.2] text-secondary mb-4">
+              <h2 className="mt-4 text-center md:text-left md:mt-6 text-[24px] md:text-[32px] lg:text-[38px] font-semibold leading-[1.2] text-white mb-4">
                 Trade. Invest. Earn
                 <br />
                 All in one app.
               </h2>
 
-              <p className="mt-4 md:mt-6 max-w-xl text-[15px] md:text-[18px] lg:text-[20px] font-normal leading-[1.6] text-[#4D4D70]">
+              <p className="mt-4 text-center md:text-left md:mt-6 max-w-xl text-[15px] md:text-[18px] lg:text-[20px] font-normal leading-[1.6] text-white">
                 Trade the CFD market on the go with our mobile application and
                 benefit from ultra-low latency trading infrastructure,
                 award-winning order execution and deep liquidity.
@@ -43,10 +45,10 @@ export default function TradeOnTheGoHero() {
                 </div>
                 {/* QR Code Text */}
                 <div className="flex flex-col justify-start items-center md:items-start pt-0 md:pt-2 w-full md:w-auto">
-                  <p className="text-[15px] md:text-[18px] lg:text-[20px] font-normal leading-[1.6] text-[#4D4D70] mb-2 text-center md:text-left">
+                  <p className="text-[15px] md:text-[18px] lg:text-[20px] font-normal leading-[1.6] text-white mb-2 text-center md:text-left">
                     Scan to Download the App
                   </p>
-                  <p className="text-[13px] md:text-[14px] font-medium text-[#4D4D70] text-center md:text-left mb-4 md:mb-0">
+                  <p className="text-[13px] md:text-[14px] font-medium text-white text-center md:text-left mb-4 md:mb-0">
                     iOS and Android
                   </p>
                   <div className="mt-0 md:mt-8 flex flex-row flex-wrap gap-3 md:gap-4 justify-center md:justify-start w-full">
@@ -56,12 +58,9 @@ export default function TradeOnTheGoHero() {
                         href="https://apps.apple.com/ae/app/gtc-go/id6753007277"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center border border-white/30 rounded-xl px-4 md:px-5 py-2.5 md:py-3 hover:shadow-[0_10px_25px_rgba(149,110,66,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
+                        className="group bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] inline-flex items-center justify-center border border-white/30 rounded-xl px-4 md:px-5 py-2.5 md:py-3 hover:shadow-[0_10px_25px_rgba(149,110,66,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
                         aria-label="Download on the App Store"
-                        style={{
-                          background:
-                            "linear-gradient(0deg, #956E42 -30.16%, #E9DDCF 156.35%)",
-                        }}
+                     
                       >
                         <svg
                           className="w-7 h-7 md:w-8 md:h-8 mr-2 md:mr-2.5 text-white flex-shrink-0"
@@ -88,7 +87,7 @@ export default function TradeOnTheGoHero() {
                           <Star />
                           <Star half />
                         </div>
-                        <span className="text-[12px] md:text-[13px] lg:text-[14px] font-medium text-[#4D4D70]">
+                        <span className="text-[12px] md:text-[13px] lg:text-[14px] font-medium text-white">
                           4.7/5
                         </span>
                       </div>
@@ -100,12 +99,9 @@ export default function TradeOnTheGoHero() {
                         href="https://play.google.com/store/search?q=GTC%20Go&c=apps&hl=en"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group inline-flex items-center justify-center border border-white/30 rounded-xl px-4 md:px-5 py-2.5 md:py-3 hover:shadow-[0_10px_25px_rgba(149,110,66,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
+                        className="group bg-gradient-to-r from-[#B68756] via-[#995F22] to-[#B68756] inline-flex items-center justify-center border border-white/30 rounded-xl px-4 md:px-5 py-2.5 md:py-3 hover:shadow-[0_10px_25px_rgba(149,110,66,0.3)] transition-all duration-300 hover:scale-105 active:scale-95"
                         aria-label="Get it on Google Play"
-                        style={{
-                          background:
-                            "linear-gradient(0deg, #956E42 -30.16%, #E9DDCF 156.35%)",
-                        }}
+                     
                       >
                         <svg
                           className="w-7 h-7 md:w-8 md:h-8 mr-2 md:mr-2.5 text-white flex-shrink-0"
@@ -132,7 +128,7 @@ export default function TradeOnTheGoHero() {
                           <Star />
                           <Star half />
                         </div>
-                        <span className="text-[12px] md:text-[13px] lg:text-[14px] font-medium text-[#4D4D70]">
+                        <span className="text-[12px] md:text-[13px] lg:text-[14px] font-medium text-white">
                           4.5/5
                         </span>
                       </div>
