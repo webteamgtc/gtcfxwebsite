@@ -73,7 +73,7 @@ export default function HeroSectionSlider() {
             position: relative;
           }
         }
-        
+
         /* Desktop styles - image on top, gradient behind for side blend */
         @media (min-width: 768px) {
           .hero-slider-bg-desktop {
@@ -94,7 +94,7 @@ export default function HeroSectionSlider() {
             position: relative;
           }
         }
-        
+
         .swiper-pagination-bullet {
           width: 12px;
           height: 12px;
@@ -103,7 +103,7 @@ export default function HeroSectionSlider() {
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: 2px solid rgba(255, 255, 255, 0.2);
         }
-        
+
         .swiper-pagination-bullet-active {
           background: linear-gradient(135deg, #956E42, #E9DDCF);
           width: 40px;
@@ -111,7 +111,7 @@ export default function HeroSectionSlider() {
           box-shadow: 0 0 20px rgba(149, 110, 66, 0.8), 0 0 40px rgba(149, 110, 66, 0.4);
           border-color: rgba(233, 221, 207, 0.5);
         }
-        
+
         .swiper-pagination {
           bottom: 40px !important;
           display: flex !important;
@@ -166,7 +166,7 @@ export default function HeroSectionSlider() {
         .animate-fade-in-delay-3 {
           animation: fade-in-up 1s cubic-bezier(0.4, 0, 0.2, 1) 0.7s both;
         }
-        
+
         .hero-gradient-text {
           background: linear-gradient(135deg, #995F22 0%, #E9DDCF 50%, #995F22 100%);
           background-size: 200% 200%;
@@ -175,7 +175,7 @@ export default function HeroSectionSlider() {
           -webkit-text-fill-color: transparent;
           animation: gradient-shift 3s ease infinite;
         }
-        
+
         @keyframes gradient-shift {
           0%, 100% {
             background-position: 0% 50%;
@@ -190,9 +190,9 @@ export default function HeroSectionSlider() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#956E42]/5 via-transparent to-[#E9DDCF]/5 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(149,110,66,0.1),transparent_50%)] pointer-events-none z-0" />
         {/* Gray overlay for mobile - improves text readability */}
-               <div className="absolute right-0 top-[18%] bottom-0 md:w-[46%] 2xl:w-[30%] 3xl:w-[26%] 4xl:w-[24%] 5xl:w-[20%] 6xl:w-[18%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0" />
+               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
         <div
-          className="absolute right-0 top-[18%] bottom-0 md:w-[46%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
+          className="absolute right-0 top-[18%] bottom-0 md:w-[46%] 2xl:w-[30%] 3xl:w-[26%] 4xl:w-[24%] 5xl:w-[20%] 6xl:w-[18%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
           style={{ backgroundPosition: "left" }}
         />
         {/* Mobile-only overlay over image for text readability */}
