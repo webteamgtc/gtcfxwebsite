@@ -190,7 +190,7 @@ export default function HeroSectionSlider() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#956E42]/5 via-transparent to-[#E9DDCF]/5 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(149,110,66,0.1),transparent_50%)] pointer-events-none z-0" />
         {/* Gray overlay for mobile - improves text readability */}
-               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
+               <div className="absolute right-0 top-[18%] bottom-0 md:w-[46%] 2xl:w-[30%] 3xl:w-[26%] 4xl:w-[24%] 5xl:w-[20%] 6xl:w-[18%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0" />
         <div
           className="absolute right-0 top-[18%] bottom-0 md:w-[46%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
           style={{ backgroundPosition: "left" }}
