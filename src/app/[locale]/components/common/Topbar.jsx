@@ -27,7 +27,7 @@ const TopBar = ({ currentLanguage, isAr, href }) => {
   const registerLink = `${baseLink}`;
 
   return (
-    <section className="hidden lg:block border-b border-white/15 bg-black/15 backdrop-blur-sm text-white" id="register1">
+    <section className="hidden bg-gradient-to-r from-[#0A0D2E] to-[#1A2256] lg:block border-b border-white/15 bg-black/15 backdrop-blur-sm text-white" id="register1">
       <div className="container mx-auto flex flex-row justify-between items-center">
         {/* Contact Info */}
         <div className="content-top flex flex-row gap-2">

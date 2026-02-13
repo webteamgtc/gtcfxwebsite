@@ -216,7 +216,7 @@ export default function HeroSectionSlider() {
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[600px] md:min-h-[600px] lg:min-h-[700px] py-12 md:py-12 lg:py-16">
+                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[600px] md:min-h-[600px] lg:min-h-[700px]">
                     {/* Content */}
                     <div className="max-w-2xl px-4 md:px-6">
                       {/* {slide.type === "slider2" ? (

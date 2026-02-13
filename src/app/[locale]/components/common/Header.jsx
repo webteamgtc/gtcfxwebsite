@@ -595,7 +595,7 @@ const Header = ({ currentLanguage }) => {
     }, [pathname]);
 
     return (
-        <div ref={headerRef} className="absolute top-0 left-0 right-0 z-[40]">
+        <div ref={headerRef} className="">
             <TopBar currentLanguage={currentLanguage} />
             <div className="header bg-white backdrop-blur-md border-b border-white/15 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
                 <nav className="container mx-auto py-3 lg:py-2">
