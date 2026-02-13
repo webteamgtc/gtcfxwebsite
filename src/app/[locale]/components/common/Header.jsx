@@ -54,8 +54,8 @@ const NavItem = ({ title, href, locale, links, id, show, setShow }) => {
     );
 };
 
-/** Dropdown panel below the nav - slides down from top. Backdrop only below header so nav stays clickable. */
-function MegamenuDropdown({ open, onClose, description, links, locale, pathnameWithoutLocale, isAr, img, content }) {
+/** Dropdown panel below the nav - matches design: deep blue, 4 columns (intro + link groups), decorative bg. */
+function MegamenuDropdown({ open, onClose, navTitle, description, links, locale, pathnameWithoutLocale, isAr }) {
     const [mounted, setMounted] = useState(false);
     const [closing, setClosing] = useState(false);
     const panelRef = useRef(null);
@@ -87,53 +87,68 @@ function MegamenuDropdown({ open, onClose, description, links, locale, pathnameW
 
     return (
         <>
-            {/* Backdrop only below this dropdown - does NOT cover the nav, so you can click other menu items */}
             <div
-                className={`absolute top-full left-0 right-0 min-h-[100vh] z-[42] bg-black/20 transition-opacity duration-200 ${backdropClass}`}
+                className={`absolute top-full left-0 right-0 min-h-[100vh] z-[42] transition-opacity duration-200 ${backdropClass}`}
                 aria-hidden
                 onClick={handleClose}
+                style={{
+                    opacity: 0.4,
+                    background: "linear-gradient(180deg, #170AAF 5%, #161D5E 35.62%, #05062E 50%)",
+                }}
             />
             <div
                 ref={panelRef}
-                className={`absolute left-0 right-0 top-full z-50 bg-[#0d122d]/90 backdrop-blur-xl transition-all duration-300 ease-out ${openClass}`}
-                style={{
-                    boxShadow: "0 25px 60px -12px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.08) inset",
-                }}
+                className={`absolute left-0 right-0 top-full z-50 min-h-[320px] transition-all duration-300 ease-out ${openClass}`}
+                // style={{
+                //     opacity: 0.7,
+                //     background: "linear-gradient(180deg, #170AAF 0%, #161D5E 77.62%, #05062E 100%)",
+                // }}
                 onTransitionEnd={handleTransitionEnd}
                 role="dialog"
                 aria-modal="true"
             >
-                {/* <div className="h-[3px] w-full bg-gradient-to-r from-[#956E42] via-[#B8875A] to-[#956E42]" /> */}
-                <div className="container mx-auto py-8 max-h-[min(70vh,480px)] overflow-y-auto">
-                    <div className="flex flex-wrap gap-x-10 gap-y-8">
+               
 
-                        {links.map((linkGroup, index) => (
-                            <div key={index} className="flex-1 min-w-[200px]">
-                                {(linkGroup.title || linkGroup.icon) && (
-                                    <h3 className={`flex gap-2.5 items-center text-white font-semibold text-[15px] mb-4 ${isAr ? "flex-row-reverse" : ""}`}>
-                                        {linkGroup.icon && (
-                                            <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#956E42]/30 text-[#E9DDCF] text-xl shrink-0">
-                                                {linkGroup.icon}
-                                            </span>
-                                        )}
-                                        {linkGroup.title && (
-                                            <span className="text-white border-b-2 border-[#956E42]/50 pb-1">{linkGroup.title}</span>
-                                        )}
+                <div className="container relative mx-auto px-4 py-8 lg:py-10">
+                    <div className={`grid grid-cols-1 gap-8 lg:gap-6 ${description ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
+                        {/* Column 1: Intro paragraph */}
+                        {description && (
+                            <div className={`lg:max-w-[260px] ${isAr ? "lg:order-4" : ""}`}>
+                                <p className="text-sm leading-relaxed text-white/95 md:text-base">
+                                    {description}
+                                </p>
+                            </div>
+                        )}
+
+                        {/* Columns 2–4: Link groups (About GTCFX, Global Presence, Highlights) - no icons */}
+                        {links?.map((linkGroup, index) => (
+                            <div key={index} className="min-w-0">
+                                {linkGroup.title && (
+                                    <h3
+                                        className={`mb-4 text-base font-bold text-white md:text-[17px] ${isAr ? "text-right" : "text-left"}`}
+                                    >
+                                        {linkGroup.title}
                                     </h3>
                                 )}
-                                <ul className="space-y-0.5">
+                                <ul className="space-y-1">
                                     {linkGroup.items?.map((item, itemIndex) => {
                                         if (!item?.locale?.includes(locale)) return null;
                                         const itemActive = pathnameWithoutLocale === item.href;
                                         const linkCls = `
-                                            block w-full rounded-xl px-3.5 py-2.5 text-sm font-medium transition-colors duration-150
-                                            ${itemActive ? "text-[#E9DDCF] bg-[#956E42]/25" : "text-white/90 hover:bg-white/10 hover:text-[#E9DDCF]"}
+                                            block w-full rounded-lg px-3 py-2 text-sm font-normal text-white/90 transition-colors
+                                            ${itemActive ? "bg-white/15 text-white" : "hover:bg-white/10 hover:text-white"}
                                             ${isAr ? "text-right" : "text-left"}
                                         `;
                                         return (
                                             <li key={itemIndex}>
                                                 {isExternal(item.href) ? (
-                                                    <a href={item.href} target="_blank" rel="noopener noreferrer" className={linkCls} onClick={onClose}>
+                                                    <a
+                                                        href={item.href}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className={linkCls}
+                                                        onClick={onClose}
+                                                    >
                                                         {item.label}
                                                     </a>
                                                 ) : (
@@ -147,18 +162,6 @@ function MegamenuDropdown({ open, onClose, description, links, locale, pathnameW
                                 </ul>
                             </div>
                         ))}
-                        {/* {description && (
-                            <div className="w-full lg:w-64 shrink-0">
-                                <div className="rounded-2xl bg-white/10 backdrop-blur-sm p-6 border border-white/20 shadow-xl shadow-black/20">
-                                    <p className="text-white/90 text-sm leading-relaxed">{description}</p>
-                                </div>
-                            </div>
-                        )} */}
-                        {content && (
-                            <>
-                                {content}
-                            </>
-                        )}
                     </div>
                 </div>
             </div>
@@ -595,9 +598,9 @@ const Header = ({ currentLanguage }) => {
     }, [pathname]);
 
     return (
-        <div ref={headerRef} className="">
+        <div ref={headerRef} className="relative z-[40]">
             <TopBar currentLanguage={currentLanguage} />
-            <div className="header bg-white backdrop-blur-md border-b border-white/15 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
+            <div className="header relative bg-white backdrop-blur-md border-b border-white/15 shadow-[0_4px_24px_rgba(0,0,0,0.12)]">
                 <nav className="container mx-auto py-3 lg:py-2">
                     <div className="flex justify-between items-center gap-4">
                         <Image
@@ -675,6 +678,7 @@ const Header = ({ currentLanguage }) => {
                         <MegamenuDropdown
                             open={!!show}
                             onClose={() => setShow("")}
+                            navTitle={activeNav.title}
                             description={activeNav.description}
                             content={activeNav.content}
                             img={activeNav.img}

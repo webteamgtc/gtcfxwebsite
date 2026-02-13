@@ -2,23 +2,31 @@
 
 export default function AboutUsBanner() {
   return (
-    <section className="relative w-full overflow-hidden bg-[#0B1B3A]">
+    <section className="relative w-full overflow-hidden "
+    style={{
+      background: "linear-gradient(0deg, #0D153A 32.44%, #243AA0 92.69%)",
+    }}
+    >
       {/* Background image */}
-      <div className="absolute inset-0 inset-y-[-50px]">
+      <div className="absolute inset-0">
         <img
-          src="/new/about-banner.svg"
+          src="/new/about-us-bg-2.svg"
           alt="About us background"
-          className="h-full w-full object-cover object-center opacity-70 blur-[1px]"
+          className="h-full w-full object-center object-cover"
         />
         {/* Blue overlay (top) */}
-        <div className="absolute inset-0 bg-[#001DAD]/30" />
+        <div className="absolute inset-0" 
+        // style={{
+        //   background: "linear-gradient(0deg, #0D153A 32.44%, #243AA0 92.69%)",
+        // }}
+        />
         {/* Bottom dark fade */}
         <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[#07122C]/65 via-[#07122C]/45 to-transparent" />
       </div>
 
       {/* Content */}
       <div className="">
-        <div className="relative mx-auto flex min-h-[450px] md:min-h-[500px] lg:min-h-[600px] max-w-6xl items-center px-6 py-14">
+        <div className="relative mx-auto flex min-h-[450px] md:min-h-[500px] lg:min-h-[835px] max-w-6xl items-center px-6 py-14">
           <div className="mx-auto max-w-[820px] text-center">
             <h2 className="text-[44px] md:text-[56px] lg:text-[64px] font-extrabold leading-[1.05] tracking-[-0.02em] text-white drop-shadow-[0_6px_18px_rgba(0,0,0,0.35)]">
               About Us
