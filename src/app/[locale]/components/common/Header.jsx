@@ -249,7 +249,7 @@ const Header = ({ currentLanguage }) => {
                             locale: "en,ar,zh,zh-tw,it,tr,fr,es,pt,ur,hi,vi,id,fa,tl,th,ko,,ja,ms,ru,ps",
                         },
                         {
-                            href: "/why-gtc-group",
+                            href: "/why-choose-us",
                             label: t("about.firstcolumn.option2"),
                             locale: "en,ar,zh,zh-tw,it,tr,fr,es,pt,ur,hi,vi,id,fa,tl,th,ko,,ja,ms,ru,ps",
                         },

@@ -1,5 +1,6 @@
 import React from "react";
 import MobileSwiperGrid from "./MobileSwiperGrid";
+import Image from "next/image";
 
 const CARDS = [
   {
@@ -58,6 +59,9 @@ const CARDS = [
   },
 ];
 
+const CARD_GRADIENT =
+  "linear-gradient(263deg, #170AAF 0%, #161D5E 90.79%, #05062E 141.58%)";
+
 export default function PremierGlobalPlatformSection() {
   return (
     <section className="w-full bg-white relative z-10 py-10">
@@ -71,50 +75,106 @@ export default function PremierGlobalPlatformSection() {
             Trade 27,000 financial products with the most stable platform. Our MetaTrader Platform offers favorable spreads and exceptional trading conditions.
           </p>
         </div>
+        {/* TOP ROW: Card | Phone in gap | Card — responsive on all breakpoints */}
+        <div className="mt-10 sm:mt-14 max-w-7xl mx-auto px-2 sm:px-4">
+          <div className="relative overflow-visible">
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 items-stretch">
+              {/* Left card */}
+              <LargeCard
+                title="Spread"
+                subtitle="Tightest Spread"
+                imageSrc="/new/phone-2.png"
+                imageClassName="absolute right-[0px] top-[-72px] w-[180px] sm:w-[200px] md:w-[220px]"
+                desc="Offering the industry’s tightest Spread, from 0 pips on FX & 5 cents on Gold"
+              />
+              <LargeCard
+                title="Leverage"
+                subtitle="Best Leverage"
+                desc="Providing the highest leverage, up to 1:2000, with minimal margin requirements starting from 0.1%"
+                imageSrc="/new/laptop-1.svg"
+                // Laptop out from top-right like screenshot
+                imageClassName="absolute right-[-8px] top-[-40px] w-[180px] sm:w-[200px] md:w-[220px]"
+              />
+            </div>
 
-        {/* Content - 6 cards in 3x2 grid (desktop) / swiper (mobile) */}
-        <div className="mt-8 md:mt-12 md:px-4 px-2 md:pb-8 pb-0">
-          <MobileSwiperGrid gridClasses="grid-cols-3" gapClasses="gap-6 lg:gap-8">
-            {CARDS.map((card, i) => (
-              <FeatureCard key={i} {...card} />
-            ))}
-          </MobileSwiperGrid>
+          </div>
+
+          {/* BOTTOM ROW (3 small cards) */}
+          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
+            <SmallCard
+              title="Instrument"
+              subtitle="Tightest Spread"
+              desc="Access to over 27,000 instruments across seven trading markets"
+            />
+            <SmallCard
+              title="Execution"
+              subtitle="Ultra-fast Execution"
+              desc="Trade with top-tier liquidity for fast, secure execution in just 10ms."
+            />
+            <SmallCard
+              title="Leverage"
+              subtitle="Tightest Spread"
+              desc="Offering the industry's tightest Spread, from 0 pips on FX & 5 cents on Gold"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function FeatureCard({ title, subtitle, desc, deviceType, deviceSrc, icon1, icon2 }) {
-  const isIconText = (v) => typeof v === "string" && !v.startsWith("/");
+function LargeCard({ title, subtitle, desc, imageSrc, imageClassName }) {
   return (
-    <div
-      className="group relative rounded-[24px] bg-[#F1F2F4]  transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.12)] hover:-translate-y-1 grid grid-cols-2"
-      style={{ boxShadow: "1px 6px 16px 0px rgba(0,0,0,0.1)" }}
-    >
-      {/* Text block */}
-      <div className="relative z-10  py-4 pl-4">
-        <h4 className="text-[18px] md:text-[20px] lg:text-[22px] font-bold leading-tight text-[#333333] mb-2">
-          {title}
-        </h4>
-        <div className="inline-block text-[14px] md:text-[16] rounded-full text-[#333333] font-semibold mb-3">
-          {subtitle}
-        </div>
+    // IMPORTANT: overflow-visible so images can go out from top
+    <div className="relative min-h-[200px] overflow-visible rounded-[26px] sm:min-h-[210px] md:h-[220px]">
+      {/* Inner layer keeps rounded corners clean */}
+      <div className="absolute inset-0 overflow-hidden rounded-[26px]" style={{ background: CARD_GRADIENT }} />
 
-        <p className="text-[13px] md:text-[14px] lg:text-[15px] leading-[1.6] text-[#666666]">
+      {/* Device image — hidden on mobile */}
+      {imageSrc ? (
+        <div className={`pointer-events-none absolute z-20 hidden md:block ${imageClassName ?? ""}`}>
+          <Image
+            src={imageSrc}
+            alt=""
+            width={420}
+            height={320}
+            className="h-auto w-full object-contain"
+            priority
+          />
+        </div>
+      ) : null}
+
+      {/* Text */}
+      <div className="relative z-10 flex h-full flex-col justify-center px-5 sm:px-8">
+        <h3 className="text-[20px] sm:text-[23px] font-extrabold leading-tight text-white">{title}</h3>
+
+        <p className="mt-2 sm:mt-4 text-[14px] sm:text-[16px] font-semibold leading-tight text-white">
+          {subtitle}
+        </p>
+
+        <p className="mt-2 sm:mt-4 max-w-[310px] text-[15px] sm:text-[18px] font-normal leading-[1.25] text-white">
           {desc}
         </p>
       </div>
+    </div>
+  );
+}
 
-      {/* Device image (dummy - replace with your asset) */}
-      <div className="relative flex-1">
-        <img
-          src={deviceSrc}
-          alt=""
-          className={`object-contain h-full w-full select-none transition-transform duration-300 group-hover:scale-105`}
-          draggable={false}
-        />
-      </div>
+function SmallCard({ title, subtitle, desc }) {
+  return (
+    <div
+      className="flex min-h-[120px] flex-col justify-center rounded-[26px] px-5 py-5 sm:px-7 sm:py-6"
+      style={{ background: CARD_GRADIENT }}
+    >
+      <h4 className="text-[20px] sm:text-[23px] font-extrabold leading-tight text-white">{title}</h4>
+
+      <p className="mt-2 sm:mt-4 text-[14px] sm:text-[16px] font-semibold leading-tight text-white">
+        {subtitle}
+      </p>
+
+      <p className="mt-2 sm:mt-4 text-[15px] sm:text-[18px] font-normal leading-[1.25] text-white">
+        {desc}
+      </p>
     </div>
   );
 }
