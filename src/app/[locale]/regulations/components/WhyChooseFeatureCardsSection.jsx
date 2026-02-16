@@ -224,10 +224,10 @@ export default function KpiBar() {
               >
                 <div className="mb-2 text-[#B89B78]">{kpi.icon}</div>
 
-                <h3 className=" text-[22px] font-bold leading-[1.1] tracking-[-0.02em] text-[#243AA0]">
+                <h3 className=" HeadingH4 my-2 !font-bold !leading-[1.1] !tracking-[-0.02em] !text-[#243AA0]">
                   {kpi.value}
                 </h3>
-                <div className="mt-1 text-[15px] font-normal leading-[1.1] text-[#4D4D70]">
+                <div className=" text-[15px] font-normal leading-[1.1] text-[#4D4D70]">
                   {kpi.label}
                 </div>
               </div>

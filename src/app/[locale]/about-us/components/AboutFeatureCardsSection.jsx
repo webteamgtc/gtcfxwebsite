@@ -166,7 +166,7 @@ const FeatureCards = () => {
 
                 <div className="flex-1 flex flex-col justify-between h-full">
                   <div>
-                    <h3 className="text-[28px] leading-[1.05] font-bold tracking-[-0.02em] text-[#243AA0]">
+                    <h3 className="HeadingH4 !font-bold !leading-[1.05] !tracking-[-0.02em] !text-[#243AA0]">
                       {it.title}
                     </h3>
 

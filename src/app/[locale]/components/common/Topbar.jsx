@@ -1,10 +1,14 @@
 import React from 'react';
 import {  useTranslations } from "next-intl";
- import { MdOutlineLogin } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
 import { useLocationDetail } from "../../../context/useLocationDetail";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { FaWhatsapp } from "react-icons/fa";
+import { AiOutlineLogin } from "react-icons/ai";
+import { LuCircleUserRound } from "react-icons/lu";
+
+
 import { Link } from '@/i18n/navigation';
  
 const TopBar = ({ currentLanguage, isAr, href }) => {
@@ -53,17 +57,20 @@ const TopBar = ({ currentLanguage, isAr, href }) => {
 
         {/* Links Section */}
         <div className={`flex items-center gap-2 ${isAr ? "rtl:md:mr-4" : "ltr:md:ml-4"}`}>
-          <Link href="https://mygtcfx.com/" target="_blank" className="hidden text-white uppercase hover:bg-white hover:text-secondary text-sm border border-gray-200 px-3 py-[6px] md:flex gap-2 items-center">
-            <MdOutlineLogin size={20} />
+          <Link href="https://mygtcfx.com/" target="_blank" className="hidden text-white hover:text-secondary text-sm  px-3 py-[6px] md:flex gap-2 items-center">
+            <AiOutlineLogin size={20} />
             {t("new_client_portal")}
           </Link>
 
-          <Link href="https://mygtcfx.com/getview?view=register&token=exhowww.z8owwwww" target="_blank" className="hidden text-white uppercase bg-[#29a643] hover:bg-white hover:text-primary text-sm border border-gray-200 px-3 py-[6px] md:flex gap-2 items-center">
+          <Link href="https://mygtcfx.com/getview?view=register&token=exhowww.z8owwwww" target="_blank" className="hidden text-white hover:text-secondary text-sm  px-3 py-[6px] md:flex gap-2 items-center">
+          <LuCircleUserRound size={20} />
             {t("tobbar.account")}
           </Link>
-          <Link href='/introductory-broker' className="hidden text-white uppercase bg-secondary hover:bg-primary hover:text-white text-sm border border-gray-200 px-3 py-[6px] md:flex gap-2 items-center">
+          <hr className='h-4 border-l border-white'></hr>
+          <p className='className="hidden text-white hover:text-secondary text-sm  px-3 py-[6px] md:flex gap-2 items-center"'>EN</p>
+          {/* <Link href='/introductory-broker' className="hidden text-white uppercase bg-secondary hover:bg-primary hover:text-white text-sm border border-gray-200 px-3 py-[6px] md:flex gap-2 items-center">
             {t("tobbar.rgister")}
-          </Link>
+          </Link> */}
         </div>
       </div>
     </section>

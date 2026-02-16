@@ -205,7 +205,7 @@ export default function RegulationGrid() {
                       alt=""
                       width={20}
                       height={18}
-                      className="mt-[2px] h-[20px] w-6 shrink-0 object-cover"
+                      className="mt-[2px] h-[24px] w-10 shrink-0 object-cover"
                     />
                     <h3 className="text-[20px] font-semibold  leading-[1.1] text-[#4D4D70]">
                       {it.country}

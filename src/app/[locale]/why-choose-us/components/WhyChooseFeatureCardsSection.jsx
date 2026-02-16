@@ -122,7 +122,7 @@ export default function KpiCardsRow() {
                 {item.icon}
 
                 {/* title */}
-                <h3 className="mt-4 text-[24px] font-extrabold leading-[1.1] tracking-[-0.02em] text-[#4D4D70]">
+                <h3 className="mt-4 HeadingH4 !font-bold !leading-[1.1] !tracking-[-0.02em] ">
                   {item.title}
                 </h3>
 

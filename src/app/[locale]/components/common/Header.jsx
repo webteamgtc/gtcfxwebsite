@@ -42,7 +42,7 @@ const NavItem = ({ title, href, locale, links, id, show, setShow }) => {
                 className={`
                     block cursor-pointer py-5 px-3 lg:px-4 rounded-lg text-sm font-medium transition-all duration-200
                     ${isAr ? "pr-3 lg:pr-4 pl-3 lg:pl-4" : "pl-3 lg:pl-4 pr-3 lg:pr-4"}
-                    ${isActive ? "text-[#E9DDCF]" : "text-black/95 hover:text-black/95 hover:bg-white/10"}
+                    ${isActive ? "text-secondary" : "text-black/95 hover:text-black/95 hover:bg-white/10"}
                     ${isOpen ? "text-black/95 bg-white/10" : ""}
                 `}
                 aria-expanded={isOpen}
@@ -92,7 +92,7 @@ function MegamenuDropdown({ open, onClose, navTitle, description, links, locale,
                 aria-hidden
                 onClick={handleClose}
                 style={{
-                    opacity: 0.4,
+                    opacity: 0.8,
                     background: "linear-gradient(180deg, #170AAF 5%, #161D5E 35.62%, #05062E 50%)",
                 }}
             />
@@ -612,7 +612,7 @@ const Header = ({ currentLanguage }) => {
                             onClick={() => router.push("/", { locale })}
                         />
                         <div className="lg:flex justify-end items-center hidden flex-1">
-                            <ul className="hidden lg:flex items-center gap-1">
+                            <ul className="hidden lg:flex items-center gap-1 mr-3">
                                 {navigationData.map((item, index) => (
                                     <NavItem
                                         key={index}
@@ -630,7 +630,10 @@ const Header = ({ currentLanguage }) => {
                                 <button
                                     type="button"
                                     onClick={() => setQrPopoverOpen((o) => !o)}
-                                    className="p-2 rounded-lg cursor-pointer text-black/90 hover:text-black hover:bg-black/10 transition-colors"
+                                    className="p-2 rounded-lg cursor-pointer hover:text-white/75 text-white transition-colors"
+                                    style={{
+                                        background: "linear-gradient(rgb(23, 10, 175) 5%, rgb(22, 29, 94) 35.62%, rgb(5, 6, 46) 50%)",
+                                    }}
                                     aria-label="Show QR code"
                                 >
                                     <TbDownload size={18} />

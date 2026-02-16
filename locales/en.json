@@ -4,7 +4,7 @@
       "liclabel": "SCA License",
       "partner": "Partner with (BHAT)- NASDAQ Listed",
       "member": "Member Login",
-      "account": "Open an Account",
+      "account": "Register",
       "rgister": "Register as a Partner"
     },
     "about": {
@@ -120,7 +120,7 @@
       }
     },
     "login": "Member Login",
-    "new_client_portal": "Member Login",
+    "new_client_portal": "Login",
     "old_client_portal": "Old Client Portal"
   },
   "metaData": {

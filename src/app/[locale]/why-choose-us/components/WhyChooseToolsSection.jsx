@@ -14,7 +14,7 @@ export default function TopToolsForSuccess() {
         {/* title with line */}
         <div className="relative flex items-center justify-center">
           <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-[#EEF0F6]" />
-          <h2 className="relative bg-white px-6 text-[44px] font-extrabold leading-none tracking-[-0.02em] text-[#4C4F73]">
+          <h2 className="relative bg-white px-6 HeadingH2 font-extrabold leading-none tracking-[-0.02em]">
             Top Tools for Success
           </h2>
         </div>
