@@ -107,7 +107,7 @@ export default function KpiCardsRow() {
     <section className="w-full bg-white">
 
       <div className="mx-auto w-full container">
-        <div className="-mt-[100px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between md:gap-6 gap-4">
+        <div className="-mt-[100px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between md:gap-5 lg:gap-6 sm:gap-4 gap-3">
           {kpis.map((item, idx) => (
             <div
               key={idx}
@@ -118,7 +118,7 @@ export default function KpiCardsRow() {
                 boxShadow: "1px 1px 16px 0 rgba(0, 0, 0, 0.10)",
               }}
             >
-              <div className="flex h-full flex-col items-center p-4 md:p-6">
+              <div className="flex h-full flex-col items-center p-4 sm:p-4 md:p-6 lg:p-6">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-[62px] md:h-[62px] flex-shrink-0 [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-full [&_svg]:max-h-full">
                   {item.icon}
                 </div>
