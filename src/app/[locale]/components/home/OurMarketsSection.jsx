@@ -137,7 +137,7 @@ const OurMarketsSection = () => {
 
   return (
     <section
-      className="w-full py-10 md:py-16 overflow-hidden bg-white"
+      className="w-full py-main overflow-hidden bg-white"
       style={{
         background: " var(--Linear, linear-gradient(180deg, #27348D 0%, #05062E 100%))"
       }}

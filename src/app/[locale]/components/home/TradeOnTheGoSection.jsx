@@ -5,7 +5,7 @@ import AttractiveSingleImageSwiper from "./MobileSlider";
 export default function TradeOnTheGoHero() {
   return (
     <>
-      <section className="w-full py-12 md:py-16"
+      <section className="w-full py-main"
         style={{ background: "linear-gradient(288deg, #27348D 36.32%, #161D5E 69.76%, #05062E 103.2%)" }}
       >
         <div

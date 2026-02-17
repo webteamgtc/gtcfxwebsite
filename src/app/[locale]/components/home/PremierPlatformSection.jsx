@@ -75,7 +75,7 @@ export default function PremierGlobalPlatformSection() {
             Trade 27,000 financial products with the most stable platform. Our MetaTrader Platform offers favorable spreads and exceptional trading conditions.
           </p>
         </div>
-        <div className="mt-10 sm:mt-14 max-w-7xl mx-auto px-0 sm:px-4">
+        <div className="mt-12 sm:mt-18 max-w-7xl mx-auto px-0 sm:px-4">
           {/* Mobile: one card at a time with arrows */}
           <div className="md:hidden">
             <MobileSwiperGrid gridClasses="" gapClasses="" swiperConfig={{ slidesPerView: 1, spaceBetween: 16 }}>

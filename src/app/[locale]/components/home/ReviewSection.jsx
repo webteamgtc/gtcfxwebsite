@@ -114,25 +114,25 @@ const PLATFORM_RATINGS = [
     {
         key: "tv",
         label: "TradingView",
-        rating: 4.7,
+        rating: 4.5,
         img: "/trading.webp",
     },
     {
         key: "wiki",
         label: "WikiFX",
-        rating: 4.6,
+        rating: 9.2,
         img: "/wiki.webp",
     },
     {
         key: "invest",
         label: "Investing.com",
-        rating: 4.6,
+        rating: 4.1,
         img: "/invest.webp",
     },
     {
         key: "tp",
         label: "Trustpilot",
-        rating: 4.6,
+        rating: 3.9,
         img: "/trust.webp",
         accent: "green",
     },
@@ -283,7 +283,7 @@ export default function ReviewsSection() {
     const totalReviews = 45;
 
     return (
-        <section className="w-full pt-10">
+        <section className="w-full md:pt-10 pt-4">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="text-center">
                     <h2 className="mt-[10px] max-w-xl mx-auto HeadingH2 font-extrabold leading-[1.3] !text-[#333] capitalize  md:leading-[1.2]">

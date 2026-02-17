@@ -158,14 +158,14 @@ export default function TopTierLiquidityAccess() {
       <div className="relative overflow-hidden">
         {/* gradient backdrop (matches image vibe) */}
 
-        <div className="relative mx-auto container px-4 md:px-6 md:py-16 py-10" data-aos="fade-up" data-aos-duration="1000">
+        <div className="relative mx-auto container px-4 md:px-6 py-main" data-aos="fade-up" data-aos-duration="1000">
           {/* Heading */}
-          <div className="text-center mb-8 md:mb-12 max-w-xl mx-auto">
-            <h2 className="HeadingH2 text-[#333]">
+          <div className="text-center mb-8 md:mb-12 ">
+            <h2 className="HeadingH2 text-[#333] max-w-xl mx-auto">
               {t("heading")}
             </h2>
-            <p className="text font-normal text-[#666] max-w-5xl mx-auto leading-relaxed">
-              Transparent service, private trades, and fast execution.
+            <p className="text font-normal text-[#666] max-w-4xl mx-auto leading-relaxed">
+            GTCFX is a trusted liquidity provider that gives you access to easy-to-use FX liquidity platforms. With our liquidity solutions, you can trade efficiently at low costs and with fast execution. You can count on our transparent and reliable service, ensuring your trades remain private. With our state-of-the-art technology and dedicated team, we support your business in liquidity trading.
               {/* {t("desc")} */}
             </p>
           </div>
