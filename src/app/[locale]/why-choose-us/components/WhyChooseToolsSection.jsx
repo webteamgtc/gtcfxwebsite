@@ -9,7 +9,7 @@ export default function TopToolsForSuccess() {
   ];
 
   return (
-    <section className="w-full bg-white py-16">
+    <section className="w-full bg-white py-main">
       <div className="mx-auto container">
         {/* title with line */}
         <div className="relative flex items-center justify-center">
@@ -20,7 +20,7 @@ export default function TopToolsForSuccess() {
         </div>
 
         {/* outer box */}
-        <div className="mt-9 rounded-[14px] bg-white px-6 py-5 "
+        <div className="md:mt-9 mt-6 rounded-[14px] bg-white px-6 py-5 "
         style={{
           borderRadius: "14px",
           background: "#FFF",

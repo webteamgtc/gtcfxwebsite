@@ -1050,7 +1050,7 @@ body {
 }
 
 .py-main{
-  @apply py-6 sm:py-8 md:py-14 lg:py-16;
+  @apply py-8 sm:py-8 md:py-14 lg:py-16;
 }
 
 .HeadingH4 {

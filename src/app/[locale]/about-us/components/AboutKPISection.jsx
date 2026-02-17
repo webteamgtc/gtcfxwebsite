@@ -98,11 +98,11 @@ export default function KpiCardsRow() {
     <section className="w-full bg-white">
 
       <div className="mx-auto w-full max-w-6xl px-6">
-        <div className="-mt-[50px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between gap-6">
+        <div className="-mt-[50px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between lg:gap-6 gap-4">
           {kpis.map((item, idx) => (
             <div
               key={idx}
-              className="w-full flex-1 rounded-[18px] bg-white px-[18px] py-[14px]"
+              className="w-full flex-1 rounded-[18px] h-full bg-white px-[18px] py-[14px]"
               style={{
                 border: "1px solid rgba(0, 0, 0, 0.10)",
                 background: "#FFF",
@@ -132,7 +132,7 @@ export default function KpiCardsRow() {
                 </div>
               </div>
 
-              <div className="mt-[10px] flex items-end gap-2">
+              <div className="mt-[10px] flex lg:items-end items-start flex-col md:flex-row md:flex-wrap sm:gap-2 gap-1">
                 <div className="text-[28px] font-extrabold leading-none"
                   style={{
                     background: "linear-gradient(180deg, #956E42 -58.7%, #E9DDCF 100%)",

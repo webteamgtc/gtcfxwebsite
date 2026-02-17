@@ -182,16 +182,16 @@ export default function RegulationGrid() {
       <div className="max-w-7xl md:px-6 px-4 mx-auto md:py-16 py-10">
         {/* wrapper with the same subtle grid lines */}
         <div className="rounded-[6px] bg-white">
-          <div className="grid grid-cols-1 md:gap-8 gap-4 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:gap-8 gap-3 md:grid-cols-2">
             {ITEMS.map((it, idx) => (
               <div
                 key={idx}
                 className={[
-                  "px-5",
+                  "md:px-5 px:0 py-4 md:py-0",
                   "border-[#ECEFF6]",
                   // horizontal dividers
                   // vertical divider on right column (md+)
-                  "md:border-l-2 ",
+                  "md:border-l-2 border-b-2 md:border-b-0 ",
                   // span both columns for last item
                   it.colSpan === 2 ? "md:col-span-2 " : "",
                 ].join(" ")}

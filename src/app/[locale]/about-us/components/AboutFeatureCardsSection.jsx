@@ -149,7 +149,7 @@ const FeatureCards = () => {
   ];
 
   return (
-    <section className="w-full bg-white py-14 pt-20">
+    <section className="w-full bg-white sm:pt-14 pt-10 lg:pt-20">
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {items.map((it) => (

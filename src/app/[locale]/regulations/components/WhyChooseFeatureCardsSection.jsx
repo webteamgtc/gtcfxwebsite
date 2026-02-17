@@ -222,7 +222,9 @@ export default function KpiBar() {
                   "px-2 md:px-6",
                 ].join(" ")}
               >
-                <div className="mb-2 text-[#B89B78]">{kpi.icon}</div>
+                <div className="mb-2 text-[#B89B78] w-8 h-8 sm:w-10 sm:h-10 md:w-[43px] md:h-[43px] flex-shrink-0 flex items-center justify-center [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-full [&_svg]:max-h-full">
+                  {kpi.icon}
+                </div>
 
                 <h3 className=" HeadingH4 my-2 !font-bold !leading-[1.1] !tracking-[-0.02em] !text-[#243AA0]">
                   {kpi.value}

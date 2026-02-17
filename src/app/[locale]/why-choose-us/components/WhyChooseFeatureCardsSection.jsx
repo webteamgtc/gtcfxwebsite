@@ -118,11 +118,13 @@ export default function KpiCardsRow() {
                 boxShadow: "1px 1px 16px 0 rgba(0, 0, 0, 0.10)",
               }}
             >
-              <div className="flex h-full flex-col items-center p-6">
-                {item.icon}
+              <div className="flex h-full flex-col items-center p-4 md:p-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-[62px] md:h-[62px] flex-shrink-0 [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-full [&_svg]:max-h-full">
+                  {item.icon}
+                </div>
 
                 {/* title */}
-                <h3 className="mt-4 HeadingH4 !font-bold !leading-[1.1] !tracking-[-0.02em] ">
+                <h3 className="mt-4 HeadingH4 !font-bold !leading-[1.1] !tracking-[-0.02em]  text-center md:text-left">
                   {item.title}
                 </h3>
 
