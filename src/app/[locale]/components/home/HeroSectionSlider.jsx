@@ -196,17 +196,17 @@ export default function HeroSectionSlider() {
           style={{ backgroundPosition: "left" }}
         />
         {/* Mobile-only: full dark overlay so text is fully visible */}
-        <div className="absolute inset-0 md:hidden bg-black/60 pointer-events-none z-[1]" />
+        <div className="absolute inset-0 lg:hidden bg-black/60 pointer-events-none z-[1]" />
         <div className="container mx-auto py-8 md:py-12 lg:py-16 relative z-10">
           <div className="relative overflow-hidden rounded-tr-[44px] bg-[#070A2A]/0">
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
-              loop={true}
-              autoplay={{
-                delay: 7000,
-                disableOnInteraction: false,
-              }}
+              // loop={true}
+              // autoplay={{
+              //   delay: 7000,
+              //   disableOnInteraction: false,
+              // }}
               pagination={{
                 clickable: true,
                 dynamicBullets: true,
@@ -216,7 +216,7 @@ export default function HeroSectionSlider() {
             >
               {slides.map((slide, index) => (
                 <SwiperSlide key={index}>
-                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[600px] md:min-h-[600px] lg:min-h-[700px]">
+                  <div className="relative z-10 flex flex-col justify-center w-full min-h-[500px] md:min-h-[600px] lg:min-h-[700px]">
                     {/* Content */}
                     <div className="max-w-2xl px-0 md:px-6">
                       <h1 className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)] text-[30px] sm:text-[52px] md:text-[55px]  font-extrabold leading-[1.05] tracking-[-0.8px] mb-8 text-left animate-fade-in">

@@ -67,7 +67,7 @@ export default function PremierGlobalPlatformSection() {
     <section className="w-full bg-white relative z-10 py-10">
       <div className="mx-auto container mt-[-105px] bg-[#fff] rounded-xl" data-aos="fade-up" data-aos-duration="1000">
         {/* Heading */}
-        <div className="text-center mb-3 pt-8 md:px-4 px-0">
+        <div className="text-center mb-3 pt-8 md:px-4 sm:px-0">
           <h2 className="HeadingH2 md:max-w-2xl mx-auto text-[#293B93]">
             Invest with the World's Premier Online Trading Platform
           </h2>
@@ -125,9 +125,9 @@ function LargeCard({ title, subtitle, desc, imageSrc, imageClassName }) {
       {/* Inner layer keeps rounded corners clean */}
       <div className="absolute inset-0 overflow-hidden rounded-[26px]" style={{ background: CARD_GRADIENT }} />
 
-      {/* Device image — hidden on mobile */}
+      {/* Device image — hidden on mobile and sm, show from lg */}
       {imageSrc ? (
-        <div className={`pointer-events-none absolute z-20 hidden md:block ${imageClassName ?? ""}`}>
+        <div className={`pointer-events-none absolute z-20 hidden lg:block ${imageClassName ?? ""}`}>
           <Image
             src={imageSrc}
             alt=""
@@ -141,13 +141,13 @@ function LargeCard({ title, subtitle, desc, imageSrc, imageClassName }) {
 
       {/* Text */}
       <div className="relative z-10 flex h-full flex-col justify-center p-5 sm:p-8">
-        <h3 className="text-[20px] sm:text-[23px] font-extrabold leading-tight text-white">{title}</h3>
+        <h3 className="text-[20px] sm:text-[20px] md:text-[23px] font-extrabold leading-tight text-white">{title}</h3>
 
-        <p className="mt-2 sm:mt-4 text-[14px] sm:text-[16px] font-semibold leading-tight text-white">
+        <p className="mt-2 sm:mt-4 text-[14px] sm:text-[14px] md:text-[16px] font-semibold leading-tight text-white">
           {subtitle}
         </p>
 
-        <p className="mt-2 sm:mt-4 max-w-[310px] text-[15px] sm:text-[18px] font-normal leading-[1.25] text-white">
+        <p className="mt-2 sm:mt-4 max-w-[310px] text-[15px] sm:text-[15px] md:text-[18px] font-normal leading-[1.25] text-white">
           {desc}
         </p>
       </div>
@@ -161,13 +161,13 @@ function SmallCard({ title, subtitle, desc }) {
       className="flex min-h-[120px] flex-col justify-center rounded-[26px] px-5 py-5 sm:px-7 sm:py-6"
       style={{ background: CARD_GRADIENT }}
     >
-      <h4 className="text-[20px] sm:text-[23px] font-extrabold leading-tight text-white">{title}</h4>
+      <h4 className="text-[20px] sm:text-[20px] md:text-[23px] font-extrabold leading-tight text-white">{title}</h4>
 
-      <p className="mt-2 sm:mt-4 text-[14px] sm:text-[16px] font-semibold leading-tight text-white">
+      <p className="mt-2 sm:mt-4 text-[14px] sm:text-[14px] md:text-[16px] font-semibold leading-tight text-white">
         {subtitle}
       </p>
 
-      <p className="mt-2 sm:mt-4 text-[15px] sm:text-[18px] font-normal leading-[1.25] text-white">
+      <p className="mt-2 sm:mt-4 text-[15px] sm:text-[15px] md:text-[18px] font-normal leading-[1.25] text-white">
         {desc}
       </p>
     </div>
