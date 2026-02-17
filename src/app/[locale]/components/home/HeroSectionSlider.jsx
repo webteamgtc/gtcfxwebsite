@@ -90,7 +90,6 @@ export default function HeroSectionSlider() {
             background-size: cover;
             background-position: center center, center;
             background-repeat: no-repeat, no-repeat;
-            min-height: 900px;
             position: relative;
           }
         }
@@ -185,7 +184,7 @@ export default function HeroSectionSlider() {
           }
         }
       `}</style>
-      <section className="w-full relative hero-bg-desktop overflow-hidden">
+      <section className="w-full relative hero-bg-desktop min-h-[600px] sm:min-h-[700px] md:min-h-[700px] lg:min-h-[800px] overflow-hidden">
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#956E42]/5 via-transparent to-[#E9DDCF]/5 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(149,110,66,0.1),transparent_50%)] pointer-events-none z-0" />
@@ -202,11 +201,11 @@ export default function HeroSectionSlider() {
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
-              // loop={true}
-              // autoplay={{
-              //   delay: 7000,
-              //   disableOnInteraction: false,
-              // }}
+              loop={true}
+              autoplay={{
+                delay: 7000,
+                disableOnInteraction: false,
+              }}
               pagination={{
                 clickable: true,
                 dynamicBullets: true,
