@@ -133,7 +133,7 @@ export default function KpiCardsRow() {
               </div>
 
               <div className="mt-[10px] flex lg:items-end items-start flex-col md:flex-row md:flex-wrap sm:gap-2 gap-1">
-                <div className="text-[28px] font-extrabold leading-none"
+                <div className="md:text-[28px]  text-[24px] font-extrabold leading-none"
                   style={{
                     background: "linear-gradient(180deg, #956E42 -58.7%, #E9DDCF 100%)",
                     backgroundClip: "text",

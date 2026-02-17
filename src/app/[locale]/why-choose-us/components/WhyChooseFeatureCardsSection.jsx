@@ -107,7 +107,7 @@ export default function KpiCardsRow() {
     <section className="w-full bg-white">
 
       <div className="mx-auto w-full container">
-        <div className="-mt-[100px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between gap-6">
+        <div className="-mt-[100px] relative grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 items-center justify-between md:gap-6 gap-4">
           {kpis.map((item, idx) => (
             <div
               key={idx}

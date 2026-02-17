@@ -162,7 +162,9 @@ const FeatureCards = () => {
               }}
             >
               <div className="flex items-start h-full gap-4 px-7 py-6">
-                <div className="pt-1">{it.icon}</div>
+                <div className="pt-1 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex-shrink-0 [&_svg]:w-full [&_svg]:h-full [&_svg]:max-w-full [&_svg]:max-h-full">
+                  {it.icon}
+                </div>
 
                 <div className="flex-1 flex flex-col justify-between h-full">
                   <div>

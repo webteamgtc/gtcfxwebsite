@@ -179,7 +179,7 @@ function renderTextWithWebsite(text) {
 export default function RegulationGrid() {
   return (
     <section className="w-full bg-white">
-      <div className="max-w-7xl md:px-6 px-4 mx-auto md:py-16 py-10">
+      <div className="max-w-7xl md:px-6 px-4 mx-auto md:pt-16 pt-8">
         {/* wrapper with the same subtle grid lines */}
         <div className="rounded-[6px] bg-white">
           <div className="grid grid-cols-1 md:gap-8 gap-3 md:grid-cols-2">

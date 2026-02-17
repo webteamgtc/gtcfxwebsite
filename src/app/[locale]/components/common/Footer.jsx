@@ -218,7 +218,7 @@ const Footer = () => {
     return (
         <>
             <div
-                className={`pb-10 z-30 py-2 md:pt-14 xl:pt-16 md:pb-8 xl:pb-10 relative overflow-hidden mt-8 ${isNotHomePage ? "mt-16" : ""
+                className={`pb-10 z-30 py-2 md:pt-14 xl:pt-16 md:pb-8 xl:pb-10 relative overflow-hidden mt-8 ${isNotHomePage ? "md:mt-16 mt-8" : ""
                     }`}
                 style={{
                     background: "linear-gradient(to bottom, #293B93, #0D122D)",
