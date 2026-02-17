@@ -107,7 +107,7 @@ function MegamenuDropdown({ open, onClose, navTitle, description, links, locale,
                 role="dialog"
                 aria-modal="true"
             >
-               
+
 
                 <div className="container relative mx-auto px-4 py-8 lg:py-10">
                     <div className={`grid grid-cols-1 gap-8 lg:gap-6 ${description ? "lg:grid-cols-4" : "lg:grid-cols-3"}`}>
@@ -662,10 +662,6 @@ const Header = ({ currentLanguage }) => {
                                     </>
                                 )}
                             </div>
-                            <div
-                                className={`flex items-center gap-2 ${isAr ? "md:mr-4" : "md:ml-4"
-                                    }`}
-                            ></div>
                         </div>
                         <div className="lg:hidden flex gap-2 items-center">
                             {/* <Language href={href} /> */}

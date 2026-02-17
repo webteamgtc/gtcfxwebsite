@@ -172,13 +172,15 @@ function PlatformStars({ value, accent }) {
     return (
         <div className="flex items-center gap-1">
             {Array.from({ length: 5 }).map((_, i) => (
-                <span
-                    key={i}
-                    className={clsx(
-                        "inline-block h-3 w-3 rounded-[2px]",
-                        i < full ? filled : "bg-gray-200"
-                    )}
-                />
+                  <svg
+                  key={i}
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  className={clsx(i < full ? "fill-amber-400" : "fill-gray-200")}
+              >
+                  <path d="M12 17.27l-5.18 3.04 1.64-5.81L3 9.24l6.03-.52L12 3l2.97 5.72 6.03.52-4.46 5.26 1.64 5.81L12 17.27z" />
+              </svg>
             ))}
         </div>
     );
@@ -284,7 +286,7 @@ export default function ReviewsSection() {
         <section className="w-full pt-10">
             <div className="mx-auto max-w-6xl px-4">
                 <div className="text-center">
-                    <h2 className="mt-[10px] max-w-xl mx-auto text-[24px] font-extrabold leading-[1.3] text-[#333] capitalize md:text-[38px] md:leading-[1.2]">
+                    <h2 className="mt-[10px] max-w-xl mx-auto HeadingH2 font-extrabold leading-[1.3] !text-[#333] capitalize  md:leading-[1.2]">
                         Read our reviews to find <br className="hidden sm:block" />
                         out more about us
                     </h2>
@@ -312,7 +314,7 @@ export default function ReviewsSection() {
                     Showing out of {totalReviews} reviews across TradingView, App Store, Google Play and Trustpilot.
                 </p>
 
-                <div className="md:mt-10 mt-5 px-4 py-6 ">
+                <div className="md:mt-10 mt-2 px-4 py-6 ">
                     <div className="grid grid-cols-2 gap-5 sm:grid-cols-4 sm:gap-0">
                         {PLATFORM_RATINGS.map((p, idx) => (
                             <div
@@ -348,7 +350,7 @@ export default function ReviewsSection() {
                     </div>
                 </div>
 
-                <p className="mt-4 text-center text-[11px] text-gray-500 sm:hidden">
+                <p className="md:mt-4 text-center text-[11px] text-gray-500 sm:hidden">
                     Tip: swipe left/right to see more reviews.
                 </p>
             </div>

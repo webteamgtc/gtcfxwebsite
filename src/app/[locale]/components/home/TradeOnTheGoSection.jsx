@@ -16,11 +16,11 @@ export default function TradeOnTheGoHero() {
           <div className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 md:gap-2 lg:gap-3">
             {/* LEFT */}
             <div className="col-span-1 md:col-span-6 lg:col-span-6 order-2 md:order-1">
-              <h1 className="text-[32px] text-center md:text-left md:text-[28px] lg:text-[40px] font-extrabold uppercase leading-[1.05] tracking-[0.3px] text-white mb-4">
+              <h1 className="text-[25px] sm:text-[32px] text-center md:text-left md:text-[28px] lg:text-[40px] font-extrabold uppercase leading-[1.05] tracking-[0.3px] text-white mb-4">
                 TRADE ON THE GO GTC GO APP
               </h1>
 
-              <h2 className="mt-4 text-center md:text-left md:mt-6 text-[24px] md:text-[32px] lg:text-[38px] font-semibold leading-[1.2] text-white mb-4">
+              <h2 className="mt-4 text-center md:text-left md:mt-6 text-[20px] sm:text-[24px] md:text-[32px] lg:text-[38px] font-semibold leading-[1.2] text-white mb-4">
                 Trade. Invest. Earn
                 <br />
                 All in one app.

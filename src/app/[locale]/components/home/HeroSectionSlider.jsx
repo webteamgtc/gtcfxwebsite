@@ -189,18 +189,18 @@ export default function HeroSectionSlider() {
         {/* Animated gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#956E42]/5 via-transparent to-[#E9DDCF]/5 pointer-events-none z-0" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(149,110,66,0.1),transparent_50%)] pointer-events-none z-0" />
-        {/* Gray overlay for mobile - improves text readability */}
-               <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
+        {/* Gray overlay - stronger on mobile for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/65 to-black/70 md:from-transparent md:via-transparent md:to-transparent pointer-events-none z-0" />
         <div
           className="absolute right-0 top-[18%] bottom-0 md:w-[46%] 2xl:w-[30%] 3xl:w-[26%] 4xl:w-[24%] 5xl:w-[20%] 6xl:w-[18%] w-10/12 bg-[url('/new/only-mobile.png')] bg-cover bg-no-repeat z-0"
           style={{ backgroundPosition: "left" }}
         />
-        {/* Mobile-only overlay over image for text readability */}
-        <div className="absolute inset-0 md:hidden bg-gradient-to-r from-black/70 via-black/50 to-transparent pointer-events-none z-[1]" />
+        {/* Mobile-only: full dark overlay so text is fully visible */}
+        <div className="absolute inset-0 md:hidden bg-black/60 pointer-events-none z-[1]" />
         <div className="container mx-auto py-8 md:py-12 lg:py-16 relative z-10">
           <div className="relative overflow-hidden rounded-tr-[44px] bg-[#070A2A]/0">
             <Swiper
-              spaceBetween={0}
+              spaceBetween={10}
               slidesPerView={1}
               loop={true}
               autoplay={{
@@ -218,43 +218,16 @@ export default function HeroSectionSlider() {
                 <SwiperSlide key={index}>
                   <div className="relative z-10 flex flex-col justify-center w-full min-h-[600px] md:min-h-[600px] lg:min-h-[700px]">
                     {/* Content */}
-                    <div className="max-w-2xl px-4 md:px-6">
-                      {/* {slide.type === "slider2" ? (
-                        <h1 className="text-[30px] sm:text-[52px] md:text-[60px] font-extrabold leading-[1.05] tracking-[-0.8px] mb-8 text-left animate-fade-in">
-                          <span className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)]">
-                            {slide.heading}
-                          </span>{" "}
-                          <span className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                            {slide.heading1}
-                          </span>{" "}
-                          <span className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)]">
-                            {slide.heading2}
-                          </span>
-                           <span className="text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]">
-                            {slide.subheading}
-                          </span>{" "}
-                          <span className="bg-gradient-to-r from-white via-[#E9DDCF] to-[#956E42] text-transparent bg-clip-text drop-shadow-[0_4px_12px_rgba(233,221,207,0.3)]">
-                            {slide.subheading2}
-                          </span>
-                        </h1>
-                      ) : ( */}
-                      <h1 className="text-[30px] sm:text-[52px] md:text-[55px]  font-extrabold leading-[1.05] tracking-[-0.8px] mb-8 text-left animate-fade-in">
-                        <span className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)]">
-                          {slide.heading}
-                        </span>
-                        <br />
-                        <span className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)]">
-                          {slide.subheading}
-                        </span>
-                        {slide.description && (
-                          <>
-                            <br />
-                            <span className="text-white/95 font-semibold drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)] text-[32px] sm:text-[36px] md:text-[40px] lg:text-[44px]">
+                    <div className="max-w-2xl px-0 md:px-6">
+                      <h1 className="hero-gradient-text drop-shadow-[0_4px_12px_rgba(149,110,66,0.4)] text-[30px] sm:text-[52px] md:text-[55px]  font-extrabold leading-[1.05] tracking-[-0.8px] mb-8 text-left animate-fade-in">
+                           {slide.heading} {" "}
+                          {slide.subheading}{" "}
+                          {slide.description && (
+                            <>
                               {slide.description}
-                            </span>
-                          </>
-                        )}
-                      </h1>
+                            </>
+                          )}
+                       </h1>
                       {/* )} */}
 
                       {/* Buttons */}

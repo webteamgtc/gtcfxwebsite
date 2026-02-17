@@ -67,19 +67,29 @@ export default function PremierGlobalPlatformSection() {
     <section className="w-full bg-white relative z-10 py-10">
       <div className="mx-auto container mt-[-105px] bg-[#fff] rounded-xl" data-aos="fade-up" data-aos-duration="1000">
         {/* Heading */}
-        <div className="text-center mb-3 pt-8 md:px-4 px-2">
-          <h2 className="HeadingH2 max-w-2xl mx-auto text-[#293B93]">
+        <div className="text-center mb-3 pt-8 md:px-4 px-0">
+          <h2 className="HeadingH2 md:max-w-2xl mx-auto text-[#293B93]">
             Invest with the World's Premier Online Trading Platform
           </h2>
           <p className="max-w-3xl text-[14px] md:text-[16px] lg:text-[18px] leading-[1.6] mx-auto text-[#666666] mt-4">
             Trade 27,000 financial products with the most stable platform. Our MetaTrader Platform offers favorable spreads and exceptional trading conditions.
           </p>
         </div>
-        {/* TOP ROW: Card | Phone in gap | Card — responsive on all breakpoints */}
-        <div className="mt-10 sm:mt-14 max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="mt-10 sm:mt-14 max-w-7xl mx-auto px-0 sm:px-4">
+          {/* Mobile: one card at a time with arrows */}
+          <div className="md:hidden">
+            <MobileSwiperGrid gridClasses="" gapClasses="" swiperConfig={{ slidesPerView: 1, spaceBetween: 16 }}>
+              <LargeCard title="Spread" subtitle="Tightest Spread" desc="Offering the industry's tightest Spread, from 0 pips on FX & 5 cents on Gold" />
+              <LargeCard title="Leverage" subtitle="Best Leverage" desc="Providing the highest leverage, up to 1:2000, with minimal margin requirements starting from 0.1%" />
+              <SmallCard title="Instrument" subtitle="Tightest Spread" desc="Access to over 27,000 instruments across seven trading markets" />
+              <SmallCard title="Execution" subtitle="Ultra-fast Execution" desc="Trade with top-tier liquidity for fast, secure execution in just 10ms." />
+              <SmallCard title="Leverage" subtitle="Tightest Spread" desc="Offering the industry's tightest Spread, from 0 pips on FX & 5 cents on Gold" />
+            </MobileSwiperGrid>
+          </div>
+          {/* Desktop */}
+          <div className="hidden md:block">
           <div className="relative overflow-visible">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 items-stretch">
-              {/* Left card */}
+            <div className="grid grid-cols-2 gap-6 items-stretch">
               <LargeCard
                 title="Spread"
                 subtitle="Tightest Spread"
@@ -92,30 +102,15 @@ export default function PremierGlobalPlatformSection() {
                 subtitle="Best Leverage"
                 desc="Providing the highest leverage, up to 1:2000, with minimal margin requirements starting from 0.1%"
                 imageSrc="/new/laptop-1.svg"
-                // Laptop out from top-right like screenshot
                 imageClassName="absolute right-[-8px] top-[-40px] w-[180px] sm:w-[200px] md:w-[220px]"
               />
             </div>
-
           </div>
-
-          {/* BOTTOM ROW (3 small cards) */}
-          <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3 md:mt-6 md:gap-6">
-            <SmallCard
-              title="Instrument"
-              subtitle="Tightest Spread"
-              desc="Access to over 27,000 instruments across seven trading markets"
-            />
-            <SmallCard
-              title="Execution"
-              subtitle="Ultra-fast Execution"
-              desc="Trade with top-tier liquidity for fast, secure execution in just 10ms."
-            />
-            <SmallCard
-              title="Leverage"
-              subtitle="Tightest Spread"
-              desc="Offering the industry's tightest Spread, from 0 pips on FX & 5 cents on Gold"
-            />
+            <div className="mt-6 grid grid-cols-3 gap-6">
+              <SmallCard title="Instrument" subtitle="Tightest Spread" desc="Access to over 27,000 instruments across seven trading markets" />
+              <SmallCard title="Execution" subtitle="Ultra-fast Execution" desc="Trade with top-tier liquidity for fast, secure execution in just 10ms." />
+              <SmallCard title="Leverage" subtitle="Tightest Spread" desc="Offering the industry's tightest Spread, from 0 pips on FX & 5 cents on Gold" />
+            </div>
           </div>
         </div>
       </div>
@@ -126,7 +121,7 @@ export default function PremierGlobalPlatformSection() {
 function LargeCard({ title, subtitle, desc, imageSrc, imageClassName }) {
   return (
     // IMPORTANT: overflow-visible so images can go out from top
-    <div className="relative min-h-[200px] overflow-visible rounded-[26px] sm:min-h-[210px] md:h-[220px]">
+    <div className="relative min-h-[150px] overflow-visible rounded-[26px] sm:min-h-[210px] md:h-[220px]">
       {/* Inner layer keeps rounded corners clean */}
       <div className="absolute inset-0 overflow-hidden rounded-[26px]" style={{ background: CARD_GRADIENT }} />
 
@@ -145,7 +140,7 @@ function LargeCard({ title, subtitle, desc, imageSrc, imageClassName }) {
       ) : null}
 
       {/* Text */}
-      <div className="relative z-10 flex h-full flex-col justify-center px-5 sm:px-8">
+      <div className="relative z-10 flex h-full flex-col justify-center p-5 sm:p-8">
         <h3 className="text-[20px] sm:text-[23px] font-extrabold leading-tight text-white">{title}</h3>
 
         <p className="mt-2 sm:mt-4 text-[14px] sm:text-[16px] font-semibold leading-tight text-white">

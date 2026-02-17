@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 /**
- * MobileSwiperGrid - A responsive component that shows a swiper on mobile and grid on desktop
+ * MobileSwiperGrid - A responsive component that shows a swiper on mobile (one card at a time) and grid on desktop
  * @param {React.ReactNode} children - The cards/items to display
  * @param {string} gridClasses - Tailwind classes for desktop grid (e.g., "grid-cols-1 md:grid-cols-3")
  * @param {string} gapClasses - Tailwind classes for gap (e.g., "gap-6 md:gap-8")
@@ -25,16 +25,9 @@ export default function MobileSwiperGrid({
   const defaultSwiperConfig = {
     modules: [Autoplay, Navigation],
     slidesPerView: 1,
-    spaceBetween: 24,
-    // pagination: {
-    //   clickable: true,
-    //   bulletClass: "swiper-pagination-bullet !bg-[#293B93] !opacity-30 !w-2 !h-2 !mx-1",
-    //   bulletActiveClass: "!opacity-100 !w-6 !rounded-full",
-    // },
-    navigation: {
-      nextEl: ".swiper-button-next-custom",
-      prevEl: ".swiper-button-prev-custom",
-    },
+    spaceBetween: 16,
+   
+    navigation: false,
     loop: true,
     autoplay: {
       delay: 3000,
@@ -61,6 +54,11 @@ export default function MobileSwiperGrid({
   return (
     <>
       <style dangerouslySetInnerHTML={{__html: `
+        .mobile-one-slide .swiper-slide {
+          width: 100% !important;
+          max-width: 100% !important;
+          box-sizing: border-box;
+        }
         .swiper-pagination-bullet {
           background: #293B93 !important;
           opacity: 0.3 !important;
@@ -119,9 +117,9 @@ export default function MobileSwiperGrid({
           </button>
         </div>
 
-        <Swiper {...defaultSwiperConfig} className="">
+        <Swiper {...defaultSwiperConfig} className="mobile-one-slide !overflow-hidden">
           {childrenArray.map((child, index) => (
-            <SwiperSlide key={index}>
+            <SwiperSlide key={index} className="!w-full">
               {child}
             </SwiperSlide>
           ))}
