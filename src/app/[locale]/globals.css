@@ -10,6 +10,9 @@
   --breakpoint-3xl: 112rem;  /* 1792px - above 2xl */
   --breakpoint-4xl: 128rem;  /* 2048px */
 }
+@layer components {
+  
+}
 
 html {
   font-family: "Poppins", sans-serif !important;
@@ -1037,7 +1040,9 @@ body {
   background-color: transparent !important;
 }
 
-
+.space {
+    @apply py-16 md:py-20;
+  }
 
 .HeadingH2 {
   @apply text-[22px] md:text-[30px] font-extrabold leading-[1.3] tracking-[-0.3px] text-[#333333] capitalize;
