@@ -64,7 +64,7 @@ const CARD_GRADIENT =
 
 export default function PremierGlobalPlatformSection() {
   return (
-    <section className="w-full bg-white relative z-10 py-10">
+    <section className="w-full bg-white relative z-10 space">
       <div className="mx-auto container mt-[-105px] bg-[#fff] rounded-xl" data-aos="fade-up" data-aos-duration="1000">
         {/* Heading */}
         <div className="text-center mb-3 pt-8 md:px-4 sm:px-0">

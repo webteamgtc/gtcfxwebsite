@@ -152,13 +152,13 @@ export default function TopTierLiquidityAccess() {
 
   return (
     <section
-      className="w-full bg-white "
+      className="w-full bg-white space"
     >
       {/* top gradient area */}
       <div className="relative overflow-hidden">
         {/* gradient backdrop (matches image vibe) */}
 
-        <div className="relative mx-auto container px-4 md:px-6 py-main" data-aos="fade-up" data-aos-duration="1000">
+        <div className="relative mx-auto container" data-aos="fade-up" data-aos-duration="1000">
           {/* Heading */}
           <div className="text-center mb-8 md:mb-12 ">
             <h2 className="HeadingH2 text-[#333] max-w-xl mx-auto">
