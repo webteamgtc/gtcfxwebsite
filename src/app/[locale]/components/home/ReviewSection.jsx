@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import clsx from "clsx";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ALL_REVIEWS = [
     {
@@ -116,18 +117,21 @@ const PLATFORM_RATINGS = [
         label: "TradingView",
         rating: 4.5,
         img: "/trading.webp",
+        link:"https://share.google/ll6ZFBmivp6fJRk1M"
     },
     {
         key: "wiki",
         label: "WikiFX",
         rating: 9.2,
         img: "/wiki.webp",
+        link:"https://www.wikifx.com/en/dealer/8791637328.html"
     },
     {
         key: "invest",
         label: "Investing.com",
         rating: 4.1,
         img: "/invest.webp",
+        link:"https://www.investing.com/brokers/reviews/gtcfx/"
     },
     {
         key: "tp",
@@ -135,6 +139,7 @@ const PLATFORM_RATINGS = [
         rating: 3.9,
         img: "/trust.webp",
         accent: "green",
+        link:"https://www.trustpilot.com/review/www.gtcfx.com"
     },
 ];
 
@@ -187,7 +192,7 @@ function PlatformStars({ value, accent }) {
 }
 
 // ✅ Source logos inside carousel cards (you can change paths)
-function SourceMark({ source }) {
+function SourceMark({ source, link }) {
     const map = {
         Google: { label: "Google", img: "/google.webp" },
         Trustpilot: { label: "Trustpilot", img: "/trust.webp" },
@@ -240,7 +245,7 @@ function ReviewCard({ r }) {
 
 export default function ReviewsSection() {
     const [reviews, setReviews] = useState([]);
-
+    const router = useRouter();
     const [emblaRef, emblaApi] = useEmblaCarousel({
         align: "center",
         loop: true,
@@ -323,8 +328,13 @@ export default function ReviewsSection() {
                                     "flex items-center justify-center gap-4 px-3 py-2",
                                     idx !== 0 && "sm:border-l sm:border-gray-200"
                                 )}
+                              
                             >
-                                <div className="flex h-6 w-6 items-center justify-center rounded-xl bg-white ring-1 ring-black/5">
+                                <div className="flex h-6 w-6 items-center justify-center cursor-pointer rounded-xl bg-white ring-1 ring-black/5"
+                                onClick={()=>{
+                                    router.push(p.link);
+                                }}
+                                >
                                     <Image
                                         src={p.img}
                                         alt={p.label}
@@ -334,7 +344,11 @@ export default function ReviewsSection() {
                                     />
                                 </div>
 
-                                <div className="min-w-[160px]">
+                                <div className="min-w-[160px] cursor-pointer"
+                                onClick={()=>{
+                                    router.push(p.link);
+                                }}
+                                >
                                     <div className="text-xs font-semibold text-gray-800">
                                         {p.label}
                                     </div>
