@@ -13,7 +13,7 @@ export default function AboutUsPage() {
   return (
     <main className="min-h-screen">
       <AboutHeroSection />
-      <AboutKPISection />
+      {/* <AboutKPISection /> */}
       <AboutFeatureCardsSection />
     </main>
   );
