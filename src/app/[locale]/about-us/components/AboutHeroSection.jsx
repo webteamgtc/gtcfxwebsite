@@ -28,7 +28,7 @@ const DURATION_MS = 2000;
 
 export default function AboutUsBanner() {
   const KPI = [
-    { value: "985,000", label: "Served clients worldwide" },
+    { value: "985,000", label: "Served clients" },
     { value: "27,000", label: "Trading instruments" },
     { value: "20", label: "Destinations worldwide" },
     { value: "$450", label: "Billion\nMonthly trades", split: true },
