@@ -164,7 +164,7 @@ export default function TopTierLiquidityAccess() {
             <h2 className="HeadingH2 text-[#333] max-w-xl mx-auto">
               {t("heading")}
             </h2>
-            <p className="text font-normal text-[#666] max-w-4xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-base font-normal text-[#666] max-w-4xl mx-auto leading-relaxed">
             GTCFX is a trusted liquidity provider that gives you access to easy-to-use FX liquidity platforms. With our liquidity solutions, you can trade efficiently at low costs and with fast execution. You can count on our transparent and reliable service, ensuring your trades remain private. With our state-of-the-art technology and dedicated team, we support your business in liquidity trading.
               {/* {t("desc")} */}
             </p>
@@ -279,7 +279,7 @@ export default function TopTierLiquidityAccess() {
           </div>
 
           {/* bottom callout */}
-          <div className="mt-5 text-center">
+          <div className="mt-14 text-center">
             <div className="text-[18px] md:text-[24px] font-extrabold tracking-[0.5px] text-[#333] mb-2">
               {t("lpLabel")}
             </div>
@@ -302,7 +302,7 @@ export default function TopTierLiquidityAccess() {
 function CardItem({ pill, title, subtitle, bullets, icon }) {
   return (
     <div
-      className="group rounded-[22px] bg-white p-6 m-1 md:p-8 w-full h-full text-left transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 cursor-pointer"
+      className="group rounded-[22px] bg-[#ECEEF5] p-6 m-1 md:p-8 w-full h-full text-left transition-all duration-300 hover:shadow-[0_15px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 cursor-pointer"
       style={{
         boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
       }}
@@ -322,7 +322,7 @@ function CardItem({ pill, title, subtitle, bullets, icon }) {
         <span>{pill}</span>
       </div>
 
-      <p className="text-[11px] md:text-[12px] font-normal text-[#2B3D93]/70 mt-3 mb-1 uppercase tracking-wide">
+      <p className="text-sm md:text-base font-normal text-[#2B3D93]/70 mt-3 mb-1 uppercase tracking-wide">
         {subtitle}
       </p>
 
@@ -330,7 +330,7 @@ function CardItem({ pill, title, subtitle, bullets, icon }) {
         <div className="text-[20px] md:text-[22px] font-bold leading-[1.2] text-[#293B93] mb-2">{title}</div>
       </div>
 
-      <ul className="mt-4 space-y-2 text-[11px] md:text-[12px] leading-[1.5] text-[#4D4D70]">
+      <ul className="mt-4 space-y-2 text-sm md:text-base leading-[1.5] text-[#4D4D70]">
         {bullets.map((b, i) => (
           <li key={i} className="flex gap-2.5 items-start">
             <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#956E42] to-[#E9DDCF] flex-shrink-0" />

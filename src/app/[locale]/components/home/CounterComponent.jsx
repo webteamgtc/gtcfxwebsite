@@ -85,8 +85,8 @@ export default function StatsBar() {
   }, [hasStarted]);
 
   return (
-    <section ref={sectionRef} className="w-full bg-[#ECEEF5]">
-      <div className="mx-auto w-full container py-10">
+    <section ref={sectionRef} className="w-full bg-[#ECEEF5] border-t border-b border-[#D1D5E0] relative z-10 border-opacity-30">
+      <div className="mx-auto w-full container py-5">
         <div className="grid grid-cols-2 md:gap-10 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
           {items.map((item, idx) => {
             const { prefix, suffix } = parseValue(item.value);
@@ -97,13 +97,13 @@ export default function StatsBar() {
                 key={idx}
                 className="flex flex-col items-center justify-center text-center"
               >
-                <div className="text-[24px] md:text-[32px] leading-[38px] font-extrabold tracking-[0.5px] text-[#333]">
+                <div className="text-[24px] md:text-[32px] leading-[38px] font-extrabold tracking-[0.5px] text-primary">
                   {formatted}
                 </div>
 
-                <div className="mt-2 md:mt-3 h-px w-[120px] md:w-[170px] bg-[#0000004D]" />
+                <div className="mt-2 md:mt-3 h-px w-[120px] md:w-[120px] bg-[#0000004D]" />
 
-                <div className="mt-2 md:mt-4 md:text-[12px] text-[10px] leading-[16px] font-medium tracking-[0.3px] text-[#666]">
+                <div className="mt-2 md:mt-4 md:text-[18px] text-[12px] leading-[16px] font-medium tracking-[0.3px] text-secondary">
                   {item.label}
                 </div>
               </div>
